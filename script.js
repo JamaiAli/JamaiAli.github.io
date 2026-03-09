@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
@@ -55,140 +55,69 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Cyber Hexagon Background Animation
-const canvas = document.getElementById('bg-canvas');
-if (canvas) {
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    let hexagons = [];
 
-    // Hexagon settings
-    const hexRadius = 30; // Size of hexagons
-    const hexHeight = hexRadius * Math.sqrt(3);
-    const hexWidth = hexRadius * 2;
+// Sprite Sheet Penguin Animation
+function createSpritePenguin() {
+    const heroName = document.getElementById('hero-name');
+    if (!heroName) return;
 
-    // Cyber Theme Colors
-    const baseColor = 'rgba(0, 255, 65, 0.03)';   // Very faint green grid
-    const pulseColor = 'rgba(0, 255, 65, 0.4)';   // Brighter green when pulsing
+    // Create container
+    const container = document.createElement('div');
+    container.style.position = 'absolute';
+    container.style.zIndex = '9999';
+    container.style.pointerEvents = 'none';
+    
+    // Initial position relative to the hero name
+    const h1Rect = heroName.getBoundingClientRect();
+    const startY = h1Rect.top + window.scrollY - 30; // slightly above text
+    container.style.top = startY + 'px';
+    
+    // Calculate total distance to walk
+    const startX = h1Rect.left - 40;
+    const targetX = h1Rect.right + 10;
+    let x = startX;
+    container.style.left = x + 'px';
 
-    function initCanvas() {
-        width = window.innerWidth;
-        height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
-    }
+    // The Sprite Element
+    const sprite = document.createElement('div');
+    sprite.className = 'pixel-penguin walking';
+    
+    container.appendChild(sprite);
+    document.body.appendChild(container);
 
-    class Hexagon {
-        constructor(x, y) {
-            this.x = x;
-            this.y = y;
-            // Pulsing variables
-            this.isPulsing = false;
-            this.pulseIntensity = 0;
-            this.pulseSpeed = Math.random() * 0.02 + 0.01;
-            // Chance to start pulsing randomly
-            this.pulseProbability = Math.random() * 0.001;
-        }
-
-        update() {
-            if (this.isPulsing) {
-                this.pulseIntensity -= this.pulseSpeed;
-                if (this.pulseIntensity <= 0) {
-                    this.pulseIntensity = 0;
-                    this.isPulsing = false;
-                }
-            } else {
-                if (Math.random() < this.pulseProbability) {
-                    this.isPulsing = true;
-                    this.pulseIntensity = Math.random() * 0.8 + 0.2; // Max intensity between 0.2 and 1.0
-                }
-            }
-        }
-
-        draw() {
-            ctx.beginPath();
-            for (let i = 0; i < 6; i++) {
-                // Angle in radians (60 degrees per step)
-                const angle_deg = 60 * i - 30;
-                const angle_rad = Math.PI / 180 * angle_deg;
-                const px = this.x + hexRadius * Math.cos(angle_rad);
-                const py = this.y + hexRadius * Math.sin(angle_rad);
-                if (i === 0) {
-                    ctx.moveTo(px, py);
-                } else {
-                    ctx.lineTo(px, py);
-                }
-            }
-            ctx.closePath();
-
-            // Draw grid outline
-            ctx.strokeStyle = baseColor;
-            ctx.lineWidth = 1;
-            ctx.stroke();
-
-            // Fill if pulsing
-            if (this.pulseIntensity > 0) {
-                ctx.fillStyle = `rgba(0, 255, 65, ${this.pulseIntensity * 0.3})`; // Max opacity 0.3
-                ctx.fill();
-            }
-        }
-    }
-
-    function initHexagons() {
-        hexagons = [];
-        // Calculate rows and columns to cover screen
-        const cols = Math.ceil(width / (hexWidth * 0.75)) + 1;
-        const rows = Math.ceil(height / hexHeight) + 1;
-
-        for (let row = -1; row < rows; row++) {
-            for (let col = -1; col < cols; col++) {
-                // Offset every other column vertically
-                let x = col * hexWidth * 0.75;
-                let y = row * hexHeight;
-                if (col % 2 !== 0) {
-                    y += hexHeight / 2;
-                }
-                hexagons.push(new Hexagon(x, y));
-            }
-        }
-    }
-
+    let isWalking = true;
+    
     function animate() {
-        // Clear with slight trailing effect or complete clear
-        ctx.clearRect(0, 0, width, height);
+        if (!isWalking) return;
 
-        for (let i = 0; i < hexagons.length; i++) {
-            hexagons[i].update();
-            hexagons[i].draw();
+        if (x < targetX) {
+            x += 1.2; // Walk speed
+            container.style.left = x + 'px';
+            requestAnimationFrame(animate);
+        } else {
+            // Reached the end of the name
+            isWalking = false;
+            
+            // 1. Stop animation (stops on frame 1)
+            sprite.classList.remove('walking');
+            
+            // 2. Turn back (flip horizontally)
+            setTimeout(() => {
+                sprite.style.transform = 'scale(-3.5, 3.5)'; // Keep the 3.5x scale
+                
+                // 3. Disappear
+                setTimeout(() => {
+                    container.style.transition = 'opacity 1s ease-out';
+                    container.style.opacity = '0';
+                    setTimeout(() => container.remove(), 1000);
+                }, 1000);
+            }, 800);
         }
-        requestAnimationFrame(animate);
     }
 
-    // Interactive mouse pulse effect
-    canvas.addEventListener('mousemove', (e) => {
-        const mouseX = e.clientX;
-        const mouseY = e.clientY;
-
-        hexagons.forEach(hex => {
-            const dx = hex.x - mouseX;
-            const dy = hex.y - mouseY;
-            const dist = Math.sqrt(dx * dx + dy * dy);
-
-            // If near mouse, ignite the pulse
-            if (dist < hexRadius * 2 && !hex.isPulsing) {
-                hex.isPulsing = true;
-                hex.pulseIntensity = 1.0;
-            }
-        });
-    });
-
-    // Initialize and handle resize
-    initCanvas();
-    initHexagons();
-    animate();
-
-    window.addEventListener('resize', () => {
-        initCanvas();
-        initHexagons();
-    });
+    // Start running the translation animation
+    requestAnimationFrame(animate);
 }
+
+// Launch
+setTimeout(createSpritePenguin, 1500);

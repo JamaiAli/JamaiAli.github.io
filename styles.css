@@ -164,3 +164,26 @@ section {
         transform: scale(1) translate(-2%, -2%);
     }
 }
+
+
+/* --- Pixel Art Sprite Sheet Penguin Animation --- */
+.pixel-penguin {
+    width: 16px;
+    height: 16px;
+    background-image: url('penguin-sprite.svg');
+    background-size: 64px 16px; /* 4 frames of 16x16 */
+    background-repeat: no-repeat;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated; /* Crisp pixel art */
+    transform-origin: center bottom;
+    transform: scale(3.5); /* Scale up the 16px sprite */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+@keyframes walk-cycle {
+    100% { background-position: -64px 0; }
+}
+
+.pixel-penguin.walking {
+    animation: walk-cycle 0.5s steps(4) infinite;
+}
