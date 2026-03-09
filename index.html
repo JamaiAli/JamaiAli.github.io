@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamai Cyber - Cybersecurity Portfolio</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#0a0a0a',
+                        surface: '#111111',
+                        border: '#1f2937',
+                        accent: '#00ff41',
+                        muted: '#9ca3af'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Icons (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-bg text-gray-300 font-sans antialiased selection:bg-accent selection:text-bg relative min-h-screen">
+
+    <!-- Ambient Professional Background -->
+    <div class="ambient-bg pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-bg/80 backdrop-blur-md border-b border-border/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#"
+                        class="text-xl font-mono font-bold tracking-tighter hover:text-accent transition-colors">
+                        <span class="text-accent">></span> Jamai Cyber<span class="animate-pulse">_</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="cyber-link text-sm font-medium">~/about</a>
+                    <a href="#projects" class="cyber-link text-sm font-medium">~/projects</a>
+                    <a href="#contact" class="cyber-link text-sm font-medium">~/contact</a>
+
+                    <div class="flex items-center space-x-4 border-l border-border pl-4">
+                        <a href="https://github.com/JamaiAli" target="_blank" rel="noopener noreferrer"
+                            class="text-muted hover:text-accent transition-colors">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ali-jamai-078602297" target="_blank"
+                            rel="noopener noreferrer" class="text-muted hover:text-accent transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-accent focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-border">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about"
+                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-bg/50 rounded-md">~/about</a>
+                <a href="#projects"
+                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-bg/50 rounded-md">~/projects</a>
+                <a href="#contact"
+                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-bg/50 rounded-md">~/contact</a>
+                <div class="flex space-x-4 px-3 py-2 pt-4 border-t border-border">
+                    <a href="https://github.com/JamaiAli" target="_blank" class="text-muted hover:text-accent">
+                        <i data-lucide="github" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ali-jamai-078602297" target="_blank"
+                        class="text-muted hover:text-accent">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex items-center min-h-[90vh]" id="about">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-12 w-full">
+            <div class="space-y-6 animate-fade-in-up flex-1">
+                <p class="font-mono text-accent text-sm md:text-base">Hello World, I am</p>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-gray-100">
+                    Jamai Ali.
+                </h1>
+                <div class="mt-6 max-w-2xl text-base md:text-lg text-muted leading-relaxed space-y-4">
+                    <p>
+                        Cybersecurity engineering student at INSA Centre Val de Loire (France) specializing in security
+                        technologies and information systems. My interests focus on threat detection, vulnerability
+                        analysis, and secure infrastructure design.
+                    </p>
+                    <p>
+                        Through my academic projects and practical work, I explore areas such as network security,
+                        penetration testing, threat intelligence, and security monitoring systems. I enjoy building
+                        tools and platforms that transform complex security data into actionable insights.
+                    </p>
+                    <p>
+                        This portfolio showcases my technical projects, research work, and cybersecurity experiments,
+                        including security dashboards, vulnerability analysis tools, and infrastructure security
+                        studies.
+                    </p>
+                    <p class="text-gray-300 font-medium pt-2">
+                        <i data-lucide="briefcase" class="inline w-4 h-4 mr-1 mb-1 text-accent"></i>
+                        I am currently seeking a cybersecurity apprenticeship starting in September 2026, where I can
+                        contribute to real-world security challenges while continuing to develop my expertise.
+                    </p>
+                </div>
+                <div class="pt-8 flex gap-4">
+                    <a href="#projects" class="cyber-button">
+                        <i data-lucide="terminal" class="w-4 h-4"></i>
+                        View My Projects
+                    </a>
+                    <a href="#contact"
+                        class="px-6 py-2 text-sm font-mono text-gray-300 border border-border hover:border-gray-500 hover:text-white transition-all">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex-shrink-0 animate-fade-in-up md:w-1/3 flex justify-center" style="animation-delay: 0.2s;">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 group">
+                    <!-- Glow effect -->
+                    <div
+                        class="absolute inset-0 bg-accent rounded-full opacity-20 group-hover:opacity-40 blur-2xl transition-opacity duration-500">
+                    </div>
+                    <!-- Outer rotating ring -->
+                    <div
+                        class="absolute inset-x-0 inset-y-0 -m-4 border border-accent/30 rounded-full border-dashed animate-[spin_20s_linear_infinite]">
+                    </div>
+                    <!-- Profile image container -->
+                    <div
+                        class="relative w-full h-full rounded-full border-2 border-border group-hover:border-accent transition-colors duration-300 overflow-hidden bg-surface p-2 z-10">
+                        <img src="profile.jpg" alt="Jamai Ali"
+                            class="w-full h-full object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Projects Section -->
+    <section id="projects" class="px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="mb-12">
+            <h2 class="text-3xl font-bold flex items-center">
+                <span class="text-accent font-mono text-xl mr-2">01.</span>
+                Technical Projects
+                <div class="ml-6 flex-grow h-[1px] bg-border max-w-xs"></div>
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project 1: Web Vulnerability Scanner -->
+            <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">Web Vulnerability Scanner</h3>
+                    <span
+                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20">Completed</span>
+                </div>
+
+                <p class="text-muted text-sm mb-6">
+                    Automated professional vulnerability scanner. Features a smart crawler, DOM extraction, and
+                    specialized testing engines (SQLi, XSS, CSRF) with HTML/JSON reports.
+                </p>
+
+                <div class="mb-6 flex-grow">
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
+                        Key Features:</h4>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Smart crawling and DOM extraction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Specialized SQLi, XSS, and CSRF modules</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Automated authentication handling (Auth Core)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Clear HTML/JSON report generation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-wrap gap-2 text-xs font-medium mb-6">
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Python 3</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Requests</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">BeautifulSoup4</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Jinja2</span>
+                </div>
+
+                <div class="pt-4 border-t border-border flex items-center space-x-6">
+                    <a href="https://github.com/JamaiAli/web-vuln-scanner" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
+                        <i data-lucide="layout-template" class="w-4 h-4 mr-2"></i>
+                        Source Code
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=RotXBkOzdBk" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
+                        <i data-lucide="play-circle" class="w-4 h-4 mr-2"></i>
+                        Live Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2: Live Threat Dashboard -->
+            <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">Live Threat Dashboard</h3>
+                    <span
+                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20">Completed</span>
+                </div>
+
+                <p class="text-muted text-sm mb-6">
+                    A real-time cybersecurity dashboard combining data visualization and monitoring. Designed to analyze
+                    and alert on security events specifically.
+                </p>
+
+                <div class="mb-6 flex-grow">
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
+                        Key Features:</h4>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Real-time security log monitoring</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Interactive data visualization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Automated threat alerting</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-wrap gap-2 text-xs font-medium mb-6">
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Monitoring</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Security Logs</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Data Viz</span>
+                </div>
+
+                <div class="pt-4 border-t border-border flex items-center space-x-6">
+                    <a href="https://github.com/JamaiAli/live-threat-dashboard" target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
+                        <i data-lucide="layout-template" class="w-4 h-4 mr-2"></i>
+                        Source Code
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=pGHL-kM1FlE" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
+                        <i data-lucide="play-circle" class="w-4 h-4 mr-2"></i>
+                        Live Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 3: Medieval Battle Simulator -->
+            <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">Medieval Battle Simulator</h3>
+                    <span
+                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20">Completed</span>
+                </div>
+
+                <p class="text-muted text-sm mb-6">
+                    Real-time medieval battle simulator (RTS). Built entirely in Python, featuring a custom game engine,
+                    a CLI/GUI view, and AI implementation for advanced strategies.
+                </p>
+
+                <div class="mb-6 flex-grow">
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
+                        Key Features:</h4>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Custom engine and rendering (GUI & Terminal)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>AI implementation and strategy patterns</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Custom scenario creation and loading</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-wrap gap-2 text-xs font-medium mb-6">
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Python 3</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Algorithms</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Game Engine</span>
+                </div>
+
+                <div class="pt-4 border-t border-border flex items-center">
+                    <a href="https://github.com/victorlmnc/ProjetPythonAoE" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
+                        <i data-lucide="layout-template" class="w-4 h-4 mr-2"></i>
+                        Source Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center py-24 mb-16">
+        <p class="font-mono text-accent mb-4">02. What's Next?</p>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
+
+        <div class="bg-surface border border-border rounded-lg p-8 mb-10 text-left">
+            <p class="text-gray-300 text-lg mb-4">
+                I am currently open to new opportunities in cybersecurity. Whether you have a question, a proposition,
+                or just want to connect, my inbox is always open!
+            </p>
+
+            <div class="mt-8 pt-6 border-t border-border/50">
+                <h3 class="text-accent font-mono text-sm uppercase tracking-wider mb-2">Response Time</h3>
+                <p class="text-muted text-sm mb-6">
+                    I typically respond to professional inquiries within 24-48 hours. For urgent matters, please
+                    indicate the priority in your subject line.
+                </p>
+
+                <h3 class="text-accent font-mono text-sm uppercase tracking-wider mb-2">Languages</h3>
+                <p class="text-muted text-sm">
+                    French (native), English (fluent)
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+            <a href="mailto:jamai.ali1v2@gmail.com"
+                class="bg-surface border border-border rounded-lg p-6 flex flex-col items-center hover:border-accent hover:-translate-y-1 transition-all group">
+                <i data-lucide="mail" class="w-8 h-8 text-muted group-hover:text-accent mb-3 transition-colors"></i>
+                <h3 class="font-bold text-gray-100 mb-1">Email</h3>
+                <p class="text-sm text-muted">jamai.ali1v2@gmail.com</p>
+            </a>
+
+            <a href="https://www.linkedin.com/in/ali-jamai-078602297" target="_blank" rel="noopener noreferrer"
+                class="bg-surface border border-border rounded-lg p-6 flex flex-col items-center hover:border-accent hover:-translate-y-1 transition-all group">
+                <i data-lucide="linkedin" class="w-8 h-8 text-muted group-hover:text-accent mb-3 transition-colors"></i>
+                <h3 class="font-bold text-gray-100 mb-1">LinkedIn</h3>
+                <p class="text-sm text-muted">ali-jamai-078602297</p>
+            </a>
+
+            <a href="https://github.com/JamaiAli" target="_blank" rel="noopener noreferrer"
+                class="bg-surface border border-border rounded-lg p-6 flex flex-col items-center hover:border-accent hover:-translate-y-1 transition-all group">
+                <i data-lucide="github" class="w-8 h-8 text-muted group-hover:text-accent mb-3 transition-colors"></i>
+                <h3 class="font-bold text-gray-100 mb-1">GitHub</h3>
+                <p class="text-sm text-muted">JamaiAli</p>
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <footer class="border-t border-border/50 py-8 text-center text-sm text-muted font-mono mt-16">
+            <div class="flex justify-center space-x-6 mb-4 md:hidden">
+                <a href="https://github.com/JamaiAli" target="_blank" class="hover:text-accent">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ali-jamai-078602297" target="_blank" class="hover:text-accent">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+            </div>
+            <p>Built & Designed by Jamai Ali</p>
+        </footer>
+
+        <!-- Init JS Scripts -->
+        <script src="script.js"></script>
+        <script>
+            // Init Lucide icons
+            lucide.createIcons();
+        </script>
+</body>
+
+</html>
