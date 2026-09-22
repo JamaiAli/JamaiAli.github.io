@@ -185,6 +185,116 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Report: Web Pentest — DVWA (OWASP Top 10) -->
+            <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">Test d'intrusion Web — DVWA (OWASP Top 10)</h3>
+                    <span
+                        class="px-3 py-1 bg-blue-900/30 text-blue-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-blue-500/20">Rapport</span>
+                </div>
+
+                <p class="text-muted text-sm mb-6">
+                    Rapport de test d'intrusion applicatif complet sur DVWA (configuration <span class="font-mono">Low</span>),
+                    aligné sur l'OWASP Top 10 2021. <strong>12 vulnérabilités identifiées et exploitées</strong> — dont
+                    4 critiques menant à la compromission totale du serveur — chacune documentée avec preuve de concept,
+                    code source vulnérable et correctif détaillé.
+                </p>
+
+                <div class="mb-6 flex-grow">
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
+                        Points forts :</h4>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Injection de commandes OS &amp; SQLi → RCE et extraction complète de la base</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Upload de webshell PHP → reverse shell TTY interactif (netcat / socat)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>XSS réfléchi, stocké &amp; DOM-based, CSRF, LFI, identifiants de session faibles</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Chaque faille scorée CVSS, avec recommandation et code corrigé</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-wrap gap-2 text-xs font-medium mb-6">
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Kali Linux</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Burp Suite</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">sqlmap</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">OWASP Top 10</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">PHP</span>
+                </div>
+
+                <div class="pt-4 border-t border-border flex items-center space-x-6">
+                    <a href="reports/rapport-pentest-dvwa.pdf" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
+                        <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
+                        Lire le rapport
+                    </a>
+                </div>
+            </div>
+
+            <!-- Report: Active Directory Pentest — Attacktive Directory -->
+            <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">Test d'intrusion Active Directory — Compromission de domaine</h3>
+                    <span
+                        class="px-3 py-1 bg-blue-900/30 text-blue-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-blue-500/20">Rapport</span>
+                </div>
+
+                <p class="text-muted text-sm mb-6">
+                    Compromission de bout en bout d'un contrôleur de domaine Windows Server 2019 (Active Directory),
+                    de la reconnaissance jusqu'au <strong>contrôle total du domaine</strong>. Une méthodologie offensive
+                    complète, documentée étape par étape, avec analyse technique et leçons défensives à chaque phase.
+                </p>
+
+                <div class="mb-6 flex-grow">
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
+                        Chaîne d'attaque :</h4>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Reconnaissance &amp; énumération : Nmap, enum4linux, RID cycling, Kerbrute</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>AS-REP Roasting → cassage de hash hors-ligne avec Hashcat</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Mouvement latéral : partage SMB, identifiants en Base64, énumération LDAP</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span>Escalade finale : DCSync + Pass-the-Hash (Evil-WinRM) → Domain Admin</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-wrap gap-2 text-xs font-medium mb-6">
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Active Directory</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Kerberos</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Impacket</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">NetExec</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Hashcat</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Evil-WinRM</span>
+                </div>
+
+                <div class="pt-4 border-t border-border flex items-center space-x-6">
+                    <a href="reports/rapport-pentest-active-directory.html" rel="noopener noreferrer"
+                        class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
+                        <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
+                        Lire le rapport
+                    </a>
+                </div>
+            </div>
+
             <!-- Project: CyberQuest — Pentest RPG -->
             <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
                 <div class="flex justify-between items-start mb-4">
