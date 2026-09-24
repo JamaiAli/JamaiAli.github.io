@@ -61,9 +61,9 @@
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#about" class="cyber-link text-sm font-medium">~/à-propos</a>
-                    <a href="#projects" class="cyber-link text-sm font-medium">~/projets</a>
-                    <a href="#contact" class="cyber-link text-sm font-medium">~/contact</a>
+                    <a href="#about" class="cyber-link text-sm font-medium" data-i18n="nav.about">~/à-propos</a>
+                    <a href="#projects" class="cyber-link text-sm font-medium" data-i18n="nav.projects">~/projets</a>
+                    <a href="#contact" class="cyber-link text-sm font-medium" data-i18n="nav.contact">~/contact</a>
 
                     <div class="flex items-center space-x-4 border-l border-border pl-4">
                         <a href="https://github.com/JamaiAli" target="_blank" rel="noopener noreferrer"
@@ -74,6 +74,36 @@
                             rel="noopener noreferrer" class="text-muted hover:text-accent transition-colors">
                             <i data-lucide="linkedin" class="w-5 h-5"></i>
                         </a>
+
+                        <!-- Language switcher -->
+                        <div class="relative" id="lang-switcher">
+                            <button id="lang-btn" type="button"
+                                class="flex items-center gap-2 text-sm font-mono text-gray-300 hover:text-accent transition-colors focus:outline-none">
+                                <img data-lang-flag src="https://flagcdn.com/24x18/fr.png" alt=""
+                                    class="w-5 h-auto rounded-[2px]">
+                                <span data-lang-label>FR</span>
+                                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div id="lang-menu"
+                                class="hidden absolute right-0 mt-2 w-44 bg-surface border border-border rounded-lg shadow-xl py-1 z-50">
+                                <button type="button" data-lang="fr"
+                                    class="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:bg-bg/50 hover:text-accent transition-colors">
+                                    <img src="https://flagcdn.com/24x18/fr.png" alt="" class="w-5 h-auto rounded-[2px]">
+                                    Français</button>
+                                <button type="button" data-lang="en"
+                                    class="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:bg-bg/50 hover:text-accent transition-colors">
+                                    <img src="https://flagcdn.com/24x18/gb.png" alt="" class="w-5 h-auto rounded-[2px]">
+                                    English</button>
+                                <button type="button" data-lang="ar"
+                                    class="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:bg-bg/50 hover:text-accent transition-colors">
+                                    <img src="https://flagcdn.com/24x18/sa.png" alt="" class="w-5 h-auto rounded-[2px]">
+                                    العربية</button>
+                                <button type="button" data-lang="es"
+                                    class="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-300 hover:bg-bg/50 hover:text-accent transition-colors">
+                                    <img src="https://flagcdn.com/24x18/es.png" alt="" class="w-5 h-auto rounded-[2px]">
+                                    Español</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -90,19 +120,38 @@
         <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-border">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#about"
-                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-bg/50 rounded-md">~/à-propos</a>
+                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-bg/50 rounded-md"
+                    data-i18n="nav.about">~/à-propos</a>
                 <a href="#projects"
-                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-bg/50 rounded-md">~/projets</a>
+                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-bg/50 rounded-md"
+                    data-i18n="nav.projects">~/projets</a>
                 <a href="#contact"
-                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-bg/50 rounded-md">~/contact</a>
-                <div class="flex space-x-4 px-3 py-2 pt-4 border-t border-border">
-                    <a href="https://github.com/JamaiAli" target="_blank" class="text-muted hover:text-accent">
-                        <i data-lucide="github" class="w-5 h-5"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/ali-jamai-078602297" target="_blank"
-                        class="text-muted hover:text-accent">
-                        <i data-lucide="linkedin" class="w-5 h-5"></i>
-                    </a>
+                    class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-accent hover:bg-bg/50 rounded-md"
+                    data-i18n="nav.contact">~/contact</a>
+                <div class="flex items-center justify-between px-3 py-2 pt-4 border-t border-border">
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/JamaiAli" target="_blank" class="text-muted hover:text-accent">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/ali-jamai-078602297" target="_blank"
+                            class="text-muted hover:text-accent">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button type="button" data-lang="fr" aria-label="Français"><img
+                                src="https://flagcdn.com/24x18/fr.png" alt="Français"
+                                class="w-6 h-auto rounded-[2px] opacity-80 hover:opacity-100"></button>
+                        <button type="button" data-lang="en" aria-label="English"><img
+                                src="https://flagcdn.com/24x18/gb.png" alt="English"
+                                class="w-6 h-auto rounded-[2px] opacity-80 hover:opacity-100"></button>
+                        <button type="button" data-lang="ar" aria-label="العربية"><img
+                                src="https://flagcdn.com/24x18/sa.png" alt="العربية"
+                                class="w-6 h-auto rounded-[2px] opacity-80 hover:opacity-100"></button>
+                        <button type="button" data-lang="es" aria-label="Español"><img
+                                src="https://flagcdn.com/24x18/es.png" alt="Español"
+                                class="w-6 h-auto rounded-[2px] opacity-80 hover:opacity-100"></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -112,42 +161,42 @@
     <main class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto flex items-center min-h-[90vh]" id="about">
         <div class="flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-10 md:gap-12 w-full">
             <div class="space-y-6 animate-fade-in-up flex-1">
-                <p class="font-mono text-accent text-sm md:text-base">Hello World, je suis</p>
+                <p class="font-mono text-accent text-sm md:text-base" data-i18n="hero.greeting">Hello World, je suis</p>
                 <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-gray-100 relative w-max" id="hero-name">
                     Jamai Ali.
                 </h1>
                 <div class="mt-6 max-w-2xl text-base md:text-lg text-muted leading-relaxed space-y-4">
-                    <p>
+                    <p data-i18n="hero.p1">
                         Étudiant ingénieur en cybersécurité à l'INSA Centre Val de Loire (France), spécialisé dans les
                         technologies de sécurité et les systèmes d'information. Mes centres d'intérêt portent sur la
                         détection des menaces, l'analyse de vulnérabilités et la conception d'infrastructures
                         sécurisées.
                     </p>
-                    <p>
+                    <p data-i18n="hero.p2">
                         À travers mes projets académiques et mes travaux pratiques, j'explore des domaines tels que la
                         sécurité réseau, les tests d'intrusion, la threat intelligence et les systèmes de supervision
                         de sécurité. J'aime concevoir des outils et des plateformes qui transforment des données de
                         sécurité complexes en informations exploitables.
                     </p>
-                    <p>
+                    <p data-i18n="hero.p3">
                         Ce portfolio présente mes projets techniques, mes travaux de recherche et mes expérimentations
                         en cybersécurité, notamment des tableaux de bord de sécurité, des outils d'analyse de
                         vulnérabilités et des études de sécurité d'infrastructure.
                     </p>
                     <p class="text-gray-300 font-medium pt-2">
                         <i data-lucide="briefcase" class="inline w-4 h-4 mr-1 mb-1 text-accent"></i>
-                        Je suis actuellement à la recherche d'un stage en cybersécurité de 4 mois, de début avril à
-                        fin juillet 2026, où je pourrai contribuer à des défis de sécurité concrets tout en continuant
-                        à développer mon expertise.
+                        <span data-i18n="hero.p4">Je suis actuellement à la recherche d'un stage en cybersécurité de 4
+                            mois, de début avril à fin juillet 2026, où je pourrai contribuer à des défis de sécurité
+                            concrets tout en continuant à développer mon expertise.</span>
                     </p>
                 </div>
                 <div class="pt-2">
                     <div class="inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-accent/10 border border-accent/30">
                         <i data-lucide="trophy" class="w-5 h-5 text-accent flex-shrink-0"></i>
                         <span class="text-sm md:text-base text-gray-200 font-medium">
-                            <span class="text-accent font-bold">4ᵉ / 42</span> au CTF
+                            <span class="text-accent font-bold">4ᵉ / 42</span> <span data-i18n="hero.ctf">au CTF</span>
                             <span class="font-semibold">Cybersup &times; Root-Me Pro</span>
-                            <span class="text-muted">— juin 2026</span>
+                            <span class="text-muted" data-i18n="hero.ctfDate">— juin 2026</span>
                         </span>
                     </div>
                     <div class="mt-4">
@@ -157,21 +206,23 @@
                                 alt="Classement final du CTF Cybersup × Root-Me Pro — 4e sur 42 participants"
                                 class="w-full h-auto block group-hover:opacity-90 transition-opacity" loading="lazy">
                         </a>
-                        <p class="text-xs text-muted mt-1 font-mono">Classement final — cliquer pour agrandir</p>
+                        <p class="text-xs text-muted mt-1 font-mono" data-i18n="hero.classementCaption">Classement final
+                            — cliquer pour agrandir</p>
                         <button type="button" data-gallery-open
                             class="mt-3 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border hover:border-accent hover:text-accent transition-colors text-sm font-mono text-gray-300">
                             <i data-lucide="image" class="w-4 h-4"></i>
-                            Voir les photos du CTF
+                            <span data-i18n="hero.galleryBtn">Voir les photos du CTF</span>
                         </button>
                     </div>
                 </div>
                 <div class="pt-8 flex gap-4">
                     <a href="#projects" class="cyber-button">
                         <i data-lucide="terminal" class="w-4 h-4"></i>
-                        Voir mes projets
+                        <span data-i18n="hero.btnProjects">Voir mes projets</span>
                     </a>
                     <a href="#contact"
-                        class="px-6 py-2 text-sm font-mono text-gray-300 border border-border hover:border-gray-500 hover:text-white transition-all">
+                        class="px-6 py-2 text-sm font-mono text-gray-300 border border-border hover:border-gray-500 hover:text-white transition-all"
+                        data-i18n="hero.btnContact">
                         Me contacter
                     </a>
                 </div>
@@ -203,7 +254,7 @@
         <div class="mb-12">
             <h2 class="text-3xl font-bold flex items-center">
                 <span class="text-accent font-mono text-xl mr-2">01.</span>
-                Projets techniques
+                <span data-i18n="projects.title">Projets techniques</span>
                 <div class="ml-6 flex-grow h-[1px] bg-border max-w-xs"></div>
             </h2>
         </div>
@@ -212,12 +263,13 @@
             <!-- Report: Web Pentest — DVWA (OWASP Top 10) -->
             <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
                 <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">Test d'intrusion Web — DVWA (OWASP Top 10)</h3>
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4" data-i18n="card.dvwa.title">Test d'intrusion Web — DVWA (OWASP Top 10)</h3>
                     <span
-                        class="px-3 py-1 bg-blue-900/30 text-blue-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-blue-500/20">Rapport</span>
+                        class="px-3 py-1 bg-blue-900/30 text-blue-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-blue-500/20"
+                        data-i18n="label.report">Rapport</span>
                 </div>
 
-                <p class="text-muted text-sm mb-6">
+                <p class="text-muted text-sm mb-6" data-i18n="card.dvwa.desc">
                     Rapport de test d'intrusion applicatif complet sur DVWA (configuration <span class="font-mono">Low</span>),
                     aligné sur l'OWASP Top 10 2021. <strong>12 vulnérabilités identifiées et exploitées</strong> — dont
                     4 critiques menant à la compromission totale du serveur — chacune documentée avec preuve de concept,
@@ -225,24 +277,24 @@
                 </p>
 
                 <div class="mb-6 flex-grow">
-                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
-                        Points forts :</h4>
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded"
+                        data-i18n="label.strengths">Points forts :</h4>
                     <ul class="space-y-2 text-sm text-muted">
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Injection de commandes OS &amp; SQLi → RCE et extraction complète de la base</span>
+                            <span data-i18n="card.dvwa.f1">Injection de commandes OS &amp; SQLi → RCE et extraction complète de la base</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Upload de webshell PHP → reverse shell TTY interactif (netcat / socat)</span>
+                            <span data-i18n="card.dvwa.f2">Upload de webshell PHP → reverse shell TTY interactif (netcat / socat)</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>XSS réfléchi, stocké &amp; DOM-based, CSRF, LFI, identifiants de session faibles</span>
+                            <span data-i18n="card.dvwa.f3">XSS réfléchi, stocké &amp; DOM-based, CSRF, LFI, identifiants de session faibles</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Chaque faille scorée CVSS, avec recommandation et code corrigé</span>
+                            <span data-i18n="card.dvwa.f4">Chaque faille scorée CVSS, avec recommandation et code corrigé</span>
                         </li>
                     </ul>
                 </div>
@@ -259,7 +311,7 @@
                     <a href="reports/rapport-pentest-dvwa.pdf" target="_blank" rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
-                        Lire le rapport
+                        <span data-i18n="link.report">Lire le rapport</span>
                     </a>
                 </div>
             </div>
@@ -267,36 +319,37 @@
             <!-- Report: Active Directory Pentest — Attacktive Directory -->
             <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
                 <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">Test d'intrusion Active Directory — Compromission de domaine</h3>
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4" data-i18n="card.ad.title">Test d'intrusion Active Directory — Compromission de domaine</h3>
                     <span
-                        class="px-3 py-1 bg-blue-900/30 text-blue-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-blue-500/20">Rapport</span>
+                        class="px-3 py-1 bg-blue-900/30 text-blue-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-blue-500/20"
+                        data-i18n="label.report">Rapport</span>
                 </div>
 
-                <p class="text-muted text-sm mb-6">
+                <p class="text-muted text-sm mb-6" data-i18n="card.ad.desc">
                     Compromission de bout en bout d'un contrôleur de domaine Windows Server 2019 (Active Directory),
                     de la reconnaissance jusqu'au <strong>contrôle total du domaine</strong>. Une méthodologie offensive
                     complète, documentée étape par étape, avec analyse technique et leçons défensives à chaque phase.
                 </p>
 
                 <div class="mb-6 flex-grow">
-                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
-                        Chaîne d'attaque :</h4>
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded"
+                        data-i18n="label.attackchain">Chaîne d'attaque :</h4>
                     <ul class="space-y-2 text-sm text-muted">
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Reconnaissance &amp; énumération : Nmap, enum4linux, RID cycling, Kerbrute</span>
+                            <span data-i18n="card.ad.f1">Reconnaissance &amp; énumération : Nmap, enum4linux, RID cycling, Kerbrute</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>AS-REP Roasting → cassage de hash hors-ligne avec Hashcat</span>
+                            <span data-i18n="card.ad.f2">AS-REP Roasting → cassage de hash hors-ligne avec Hashcat</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Mouvement latéral : partage SMB, identifiants en Base64, énumération LDAP</span>
+                            <span data-i18n="card.ad.f3">Mouvement latéral : partage SMB, identifiants en Base64, énumération LDAP</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Escalade finale : DCSync + Pass-the-Hash (Evil-WinRM) → Domain Admin</span>
+                            <span data-i18n="card.ad.f4">Escalade finale : DCSync + Pass-the-Hash (Evil-WinRM) → Domain Admin</span>
                         </li>
                     </ul>
                 </div>
@@ -314,7 +367,7 @@
                     <a href="reports/rapport-pentest-active-directory.html" rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
-                        Lire le rapport
+                        <span data-i18n="link.report">Lire le rapport</span>
                     </a>
                 </div>
             </div>
@@ -322,36 +375,37 @@
             <!-- Project: CyberQuest — Pentest RPG -->
             <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
                 <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">CyberQuest — RPG de Pentest</h3>
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4" data-i18n="card.cq.title">CyberQuest — RPG de Pentest</h3>
                     <span
-                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20">Terminé</span>
+                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20"
+                        data-i18n="label.done">Terminé</span>
                 </div>
 
-                <p class="text-muted text-sm mb-6">
+                <p class="text-muted text-sm mb-6" data-i18n="card.cq.desc">
                     Une plateforme d'apprentissage de la cybersécurité gamifiée. Incarne GHOST, un hacker infiltrant
                     NEXUS Corp : déplace-toi sur une carte en vue du dessus, attaque les machines depuis un terminal
                     intégré et progresse à travers 5 salles spécialisées guidées par une IA mentor.
                 </p>
 
                 <div class="mb-6 flex-grow">
-                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
-                        Fonctionnalités clés :</h4>
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded"
+                        data-i18n="label.keyfeatures">Fonctionnalités clés :</h4>
                     <ul class="space-y-2 text-sm text-muted">
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>5 salles : Web (DVWA), Active Directory, Linux, Prompt Injection, AI Core</span>
+                            <span data-i18n="card.cq.f1">5 salles : Web (DVWA), Active Directory, Linux, Prompt Injection, AI Core</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Carte interactive en vue du dessus avec terminal de pentest intégré</span>
+                            <span data-i18n="card.cq.f2">Carte interactive en vue du dessus avec terminal de pentest intégré</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Assistant IA MENTOR propulsé par les LLM Gemini &amp; Groq</span>
+                            <span data-i18n="card.cq.f3">Assistant IA MENTOR propulsé par les LLM Gemini &amp; Groq</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Moteur VFS local — ls/cd/pwd instantanés, zéro appel API</span>
+                            <span data-i18n="card.cq.f4">Moteur VFS local — ls/cd/pwd instantanés, zéro appel API</span>
                         </li>
                     </ul>
                 </div>
@@ -368,12 +422,12 @@
                     <a href="https://github.com/JamaiAli/CyberquestProject" target="_blank" rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="layout-template" class="w-4 h-4 mr-2"></i>
-                        Code source
+                        <span data-i18n="link.source">Code source</span>
                     </a>
                     <a href="https://youtu.be/mzsr-nEcrWc" target="_blank" rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="play-circle" class="w-4 h-4 mr-2"></i>
-                        Démo
+                        <span data-i18n="link.demo">Démo</span>
                     </a>
                 </div>
             </div>
@@ -381,36 +435,37 @@
             <!-- Project: PentAI — AI Vulnerability Triage -->
             <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
                 <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">PentAI — Triage IA des vulnérabilités</h3>
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4" data-i18n="card.pentai.title">PentAI — Triage IA des vulnérabilités</h3>
                     <span
-                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20">Terminé</span>
+                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20"
+                        data-i18n="label.done">Terminé</span>
                 </div>
 
-                <p class="text-muted text-sm mb-6">
+                <p class="text-muted text-sm mb-6" data-i18n="card.pentai.desc">
                     Un outil DevSecOps qui combat l'« alert fatigue » en triant et priorisant intelligemment les
                     vulnérabilités des scanners grâce au deep learning et à la threat intelligence, au lieu de faire
                     aveuglément confiance aux résultats bruts des scanners.
                 </p>
 
                 <div class="mb-6 flex-grow">
-                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
-                        Fonctionnalités clés :</h4>
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded"
+                        data-i18n="label.keyfeatures">Fonctionnalités clés :</h4>
                     <ul class="space-y-2 text-sm text-muted">
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Embeddings sémantiques SecBERT entraînés sur plus de 11 000 cas réels</span>
+                            <span data-i18n="card.pentai.f1">Embeddings sémantiques SecBERT entraînés sur plus de 11 000 cas réels</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Threat intelligence CISA KEV — les failles activement exploitées sont priorisées</span>
+                            <span data-i18n="card.pentai.f2">Threat intelligence CISA KEV — les failles activement exploitées sont priorisées</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Parser universel pour les exports JSON de Nuclei &amp; Nessus</span>
+                            <span data-i18n="card.pentai.f3">Parser universel pour les exports JSON de Nuclei &amp; Nessus</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Rapports d'audit PDF automatiques avec traduction EN→FR</span>
+                            <span data-i18n="card.pentai.f4">Rapports d'audit PDF automatiques avec traduction EN→FR</span>
                         </li>
                     </ul>
                 </div>
@@ -427,7 +482,7 @@
                     <a href="https://github.com/JamaiAli/PentAI" target="_blank" rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="layout-template" class="w-4 h-4 mr-2"></i>
-                        Code source
+                        <span data-i18n="link.source">Code source</span>
                     </a>
                 </div>
             </div>
@@ -435,35 +490,36 @@
             <!-- Project 0: NEXUS — Intelligent Dashboard -->
             <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
                 <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">NEXUS — Tableau de bord intelligent</h3>
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4" data-i18n="card.nexus.title">NEXUS — Tableau de bord intelligent</h3>
                     <span
-                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20">Terminé</span>
+                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20"
+                        data-i18n="label.done">Terminé</span>
                 </div>
 
-                <p class="text-muted text-sm mb-6">
+                <p class="text-muted text-sm mb-6" data-i18n="card.nexus.desc">
                     Une solution Fullstack moderne pour centraliser, organiser et optimiser sa recherche de stage ou
                     d'emploi. Inspirée des méthodes agiles, avec un pipeline Kanban dynamique.
                 </p>
 
                 <div class="mb-6 flex-grow">
-                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
-                        Fonctionnalités clés :</h4>
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded"
+                        data-i18n="label.keyfeatures">Fonctionnalités clés :</h4>
                     <ul class="space-y-2 text-sm text-muted">
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Pipeline Kanban dynamique (glisser-déposer)</span>
+                            <span data-i18n="card.nexus.f1">Pipeline Kanban dynamique (glisser-déposer)</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Extraction de données par web scraping</span>
+                            <span data-i18n="card.nexus.f2">Extraction de données par web scraping</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Analytics et KPI de recherche d'emploi</span>
+                            <span data-i18n="card.nexus.f3">Analytics et KPI de recherche d'emploi</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Gestion centralisée des documents</span>
+                            <span data-i18n="card.nexus.f4">Gestion centralisée des documents</span>
                         </li>
                     </ul>
                 </div>
@@ -479,12 +535,12 @@
                     <a href="https://github.com/JamaiAli/Dashboard_alternance" target="_blank" rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="layout-template" class="w-4 h-4 mr-2"></i>
-                        Code source
+                        <span data-i18n="link.source">Code source</span>
                     </a>
                     <a href="https://youtu.be/CnKO8ISfkqs" target="_blank" rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="play-circle" class="w-4 h-4 mr-2"></i>
-                        Démo
+                        <span data-i18n="link.demo">Démo</span>
                     </a>
                 </div>
             </div>
@@ -492,35 +548,36 @@
             <!-- Project 1: Web Vulnerability Scanner -->
             <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
                 <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">Scanner de vulnérabilités web</h3>
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4" data-i18n="card.scanner.title">Scanner de vulnérabilités web</h3>
                     <span
-                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20">Terminé</span>
+                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20"
+                        data-i18n="label.done">Terminé</span>
                 </div>
 
-                <p class="text-muted text-sm mb-6">
+                <p class="text-muted text-sm mb-6" data-i18n="card.scanner.desc">
                     Scanner de vulnérabilités professionnel et automatisé. Doté d'un crawler intelligent, d'une
                     extraction du DOM et de moteurs de test spécialisés (SQLi, XSS, CSRF) avec rapports HTML/JSON.
                 </p>
 
                 <div class="mb-6 flex-grow">
-                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
-                        Fonctionnalités clés :</h4>
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded"
+                        data-i18n="label.keyfeatures">Fonctionnalités clés :</h4>
                     <ul class="space-y-2 text-sm text-muted">
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Crawling intelligent et extraction du DOM</span>
+                            <span data-i18n="card.scanner.f1">Crawling intelligent et extraction du DOM</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Modules spécialisés SQLi, XSS et CSRF</span>
+                            <span data-i18n="card.scanner.f2">Modules spécialisés SQLi, XSS et CSRF</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Gestion automatisée de l'authentification (Auth Core)</span>
+                            <span data-i18n="card.scanner.f3">Gestion automatisée de l'authentification (Auth Core)</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Génération de rapports HTML/JSON clairs</span>
+                            <span data-i18n="card.scanner.f4">Génération de rapports HTML/JSON clairs</span>
                         </li>
                     </ul>
                 </div>
@@ -536,12 +593,12 @@
                     <a href="https://github.com/JamaiAli/web-vuln-scanner" target="_blank" rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="layout-template" class="w-4 h-4 mr-2"></i>
-                        Code source
+                        <span data-i18n="link.source">Code source</span>
                     </a>
                     <a href="https://www.youtube.com/watch?v=RotXBkOzdBk" target="_blank" rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="play-circle" class="w-4 h-4 mr-2"></i>
-                        Démo
+                        <span data-i18n="link.demo">Démo</span>
                     </a>
                 </div>
             </div>
@@ -549,39 +606,40 @@
             <!-- Project 2: Live Threat Dashboard -->
             <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
                 <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">Tableau de bord des menaces en temps réel</h3>
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4" data-i18n="card.threat.title">Tableau de bord des menaces en temps réel</h3>
                     <span
-                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20">Terminé</span>
+                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20"
+                        data-i18n="label.done">Terminé</span>
                 </div>
 
-                <p class="text-muted text-sm mb-6">
+                <p class="text-muted text-sm mb-6" data-i18n="card.threat.desc">
                     Un tableau de bord de cybersécurité en temps réel combinant visualisation de données et supervision.
                     Conçu pour analyser les événements de sécurité et alerter dessus.
                 </p>
 
                 <div class="mb-6 flex-grow">
-                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
-                        Fonctionnalités clés :</h4>
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded"
+                        data-i18n="label.keyfeatures">Fonctionnalités clés :</h4>
                     <ul class="space-y-2 text-sm text-muted">
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Supervision des logs de sécurité en temps réel</span>
+                            <span data-i18n="card.threat.f1">Supervision des logs de sécurité en temps réel</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Visualisation de données interactive</span>
+                            <span data-i18n="card.threat.f2">Visualisation de données interactive</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Alerte automatisée sur les menaces</span>
+                            <span data-i18n="card.threat.f3">Alerte automatisée sur les menaces</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="flex flex-wrap gap-2 text-xs font-medium mb-6">
-                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Supervision</span>
-                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Logs de sécurité</span>
-                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Visualisation</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full" data-i18n="tag.monitoring">Supervision</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full" data-i18n="tag.seclogs">Logs de sécurité</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full" data-i18n="tag.dataviz">Visualisation</span>
                 </div>
 
                 <div class="pt-4 border-t border-border flex items-center space-x-6">
@@ -589,12 +647,12 @@
                         rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="layout-template" class="w-4 h-4 mr-2"></i>
-                        Code source
+                        <span data-i18n="link.source">Code source</span>
                     </a>
                     <a href="https://www.youtube.com/watch?v=pGHL-kM1FlE" target="_blank" rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="play-circle" class="w-4 h-4 mr-2"></i>
-                        Démo
+                        <span data-i18n="link.demo">Démo</span>
                     </a>
                 </div>
             </div>
@@ -602,46 +660,47 @@
             <!-- Project 3: Medieval Battle Simulator -->
             <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
                 <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">Simulateur de bataille médiévale</h3>
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4" data-i18n="card.medieval.title">Simulateur de bataille médiévale</h3>
                     <span
-                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20">Terminé</span>
+                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20"
+                        data-i18n="label.done">Terminé</span>
                 </div>
 
-                <p class="text-muted text-sm mb-6">
+                <p class="text-muted text-sm mb-6" data-i18n="card.medieval.desc">
                     Simulateur de bataille médiévale en temps réel (RTS). Entièrement développé en Python, avec un
                     moteur de jeu maison, une vue CLI/GUI et une implémentation d'IA pour des stratégies avancées.
                 </p>
 
                 <div class="mb-6 flex-grow">
-                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
-                        Fonctionnalités clés :</h4>
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded"
+                        data-i18n="label.keyfeatures">Fonctionnalités clés :</h4>
                     <ul class="space-y-2 text-sm text-muted">
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Moteur et rendu maison (GUI & Terminal)</span>
+                            <span data-i18n="card.medieval.f1">Moteur et rendu maison (GUI & Terminal)</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Implémentation d'IA et patterns de stratégie</span>
+                            <span data-i18n="card.medieval.f2">Implémentation d'IA et patterns de stratégie</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Création et chargement de scénarios personnalisés</span>
+                            <span data-i18n="card.medieval.f3">Création et chargement de scénarios personnalisés</span>
                         </li>
                     </ul>
                 </div>
 
                 <div class="flex flex-wrap gap-2 text-xs font-medium mb-6">
                     <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Python 3</span>
-                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Algorithmes</span>
-                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Moteur de jeu</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full" data-i18n="tag.algorithms">Algorithmes</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full" data-i18n="tag.gameengine">Moteur de jeu</span>
                 </div>
 
                 <div class="pt-4 border-t border-border flex items-center">
                     <a href="https://github.com/victorlmnc/ProjetPythonAoE" target="_blank" rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="layout-template" class="w-4 h-4 mr-2"></i>
-                        Code source
+                        <span data-i18n="link.source">Code source</span>
                     </a>
                 </div>
             </div>
@@ -649,36 +708,37 @@
             <!-- Project 4: MedievAIl Battle — Distributed P2P Game -->
             <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
                 <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4">MedievAIl Battle — Jeu P2P distribué</h3>
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4" data-i18n="card.p2p.title">MedievAIl Battle — Jeu P2P distribué</h3>
                     <span
-                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20">Terminé</span>
+                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20"
+                        data-i18n="label.done">Terminé</span>
                 </div>
 
-                <p class="text-muted text-sm mb-6">
+                <p class="text-muted text-sm mb-6" data-i18n="card.p2p.desc">
                     Une infrastructure peer-to-peer décentralisée pour un jeu de stratégie de bataille médiévale où
                     plusieurs joueurs IA s'affrontent sur le réseau sans serveur central. Projet de cours réseaux
                     (STI3A).
                 </p>
 
                 <div class="mb-6 flex-grow">
-                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded">
-                        Fonctionnalités clés :</h4>
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded"
+                        data-i18n="label.keyfeatures">Fonctionnalités clés :</h4>
                     <ul class="space-y-2 text-sm text-muted">
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Architecture P2P décentralisée (sans serveur central)</span>
+                            <span data-i18n="card.p2p.f1">Architecture P2P décentralisée (sans serveur central)</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Stack hybride : logique de jeu Python + daemon réseau en C</span>
+                            <span data-i18n="card.p2p.f2">Stack hybride : logique de jeu Python + daemon réseau en C</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>Protocole de consensus « Network Ownership » pour éviter les conflits</span>
+                            <span data-i18n="card.p2p.f3">Protocole de consensus « Network Ownership » pour éviter les conflits</span>
                         </li>
                         <li class="flex items-start">
                             <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span>IPC local via sockets UDP entre les processus</span>
+                            <span data-i18n="card.p2p.f4">IPC local via sockets UDP entre les processus</span>
                         </li>
                     </ul>
                 </div>
@@ -686,7 +746,7 @@
                 <div class="flex flex-wrap gap-2 text-xs font-medium mb-6">
                     <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Python</span>
                     <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">C</span>
-                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Sockets UDP / TCP</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full" data-i18n="tag.udptcp">Sockets UDP / TCP</span>
                     <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">P2P</span>
                 </div>
 
@@ -694,7 +754,7 @@
                     <a href="https://github.com/YOUSSEF4315/STI3A-Projet_reseaux_1" target="_blank" rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="layout-template" class="w-4 h-4 mr-2"></i>
-                        Code source
+                        <span data-i18n="link.source">Code source</span>
                     </a>
                 </div>
             </div>
@@ -703,18 +763,18 @@
 
     <!-- Contact Section -->
     <section id="contact" class="px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto text-center py-24 mb-16">
-        <p class="font-mono text-accent mb-4">02. Et maintenant ?</p>
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">Entrons en contact</h2>
+        <p class="font-mono text-accent mb-4" data-i18n="contact.kicker">02. Et maintenant ?</p>
+        <h2 class="text-4xl md:text-5xl font-bold mb-6" data-i18n="contact.title">Entrons en contact</h2>
 
         <div class="bg-surface border border-border rounded-lg p-8 mb-10 text-left">
-            <p class="text-gray-300 text-lg mb-4">
+            <p class="text-gray-300 text-lg mb-4" data-i18n="contact.p">
                 Je suis actuellement ouvert à de nouvelles opportunités en cybersécurité. Que vous ayez une question,
                 une proposition, ou que vous souhaitiez simplement échanger, ma boîte de réception est toujours ouverte !
             </p>
 
             <div class="mt-8 pt-6 border-t border-border/50">
-                <h3 class="text-accent font-mono text-sm uppercase tracking-wider mb-2">Langues</h3>
-                <p class="text-muted text-sm">
+                <h3 class="text-accent font-mono text-sm uppercase tracking-wider mb-2" data-i18n="contact.langLabel">Langues</h3>
+                <p class="text-muted text-sm" data-i18n="contact.langValue">
                     Français (natif), Anglais (courant)
                 </p>
             </div>
@@ -753,7 +813,7 @@
                     <i data-lucide="linkedin" class="w-5 h-5"></i>
                 </a>
             </div>
-            <p>Conçu et développé par Jamai Ali</p>
+            <p data-i18n="footer.text">Conçu et développé par Jamai Ali</p>
         </footer>
 
         <!-- CTF Gallery Modal (lightbox) -->
@@ -762,7 +822,7 @@
             <div class="max-w-5xl mx-auto">
                 <div class="flex items-center justify-between mb-6">
                     <h3 class="text-lg md:text-xl font-bold text-gray-100 font-mono">
-                        <span class="text-accent">></span> Photos — CTF Cybersup &times; Root-Me Pro
+                        <span class="text-accent">></span> <span data-i18n="gallery.title">Photos — CTF Cybersup &times; Root-Me Pro</span>
                     </h3>
                     <button type="button" data-gallery-close
                         class="text-gray-400 hover:text-accent transition-colors" aria-label="Fermer">
@@ -791,7 +851,7 @@
                             class="w-full h-56 object-cover" loading="lazy">
                     </a>
                 </div>
-                <p class="text-center text-xs text-muted mt-6 font-mono">Cliquer sur une photo pour l'ouvrir en grand
+                <p class="text-center text-xs text-muted mt-6 font-mono" data-i18n="gallery.caption">Cliquer sur une photo pour l'ouvrir en grand
                     &middot; Échap pour fermer</p>
             </div>
         </div>
@@ -814,6 +874,284 @@
                 document.addEventListener('keydown', e => {
                     if (e.key === 'Escape' && !modal.classList.contains('hidden')) close();
                 });
+            })();
+
+            // Language switcher (FR default captured from DOM; EN / AR / ES provided)
+            (function () {
+                const translations = {
+                    en: {
+                        "nav.about": "~/about", "nav.projects": "~/projects", "nav.contact": "~/contact",
+                        "hero.greeting": "Hello World, I am",
+                        "hero.p1": "Cybersecurity engineering student at INSA Centre Val de Loire (France), specializing in security technologies and information systems. My interests focus on threat detection, vulnerability analysis, and secure infrastructure design.",
+                        "hero.p2": "Through my academic projects and hands-on work, I explore areas such as network security, penetration testing, threat intelligence, and security monitoring systems. I enjoy building tools and platforms that turn complex security data into actionable insights.",
+                        "hero.p3": "This portfolio showcases my technical projects, research work, and cybersecurity experiments, including security dashboards, vulnerability analysis tools, and infrastructure security studies.",
+                        "hero.p4": "I am currently looking for a 4-month cybersecurity internship, from early April to late July 2026, where I can contribute to real-world security challenges while continuing to grow my expertise.",
+                        "hero.ctf": "at the CTF", "hero.ctfDate": "— June 2026",
+                        "hero.classementCaption": "Final ranking — click to enlarge",
+                        "hero.galleryBtn": "View CTF photos",
+                        "hero.btnProjects": "View my projects", "hero.btnContact": "Contact me",
+                        "projects.title": "Technical projects",
+                        "label.report": "Report", "label.done": "Completed",
+                        "label.keyfeatures": "Key features:", "label.strengths": "Highlights:", "label.attackchain": "Attack chain:",
+                        "link.source": "Source code", "link.demo": "Demo", "link.report": "Read the report",
+                        "card.dvwa.title": "Web Penetration Test — DVWA (OWASP Top 10)",
+                        "card.dvwa.desc": "Complete application penetration test report on DVWA (<span class=\"font-mono\">Low</span> configuration), aligned with the OWASP Top 10 2021. <strong>12 vulnerabilities identified and exploited</strong> — 4 of them critical, leading to full server compromise — each documented with a proof of concept, vulnerable source code, and a detailed fix.",
+                        "card.dvwa.f1": "OS command injection & SQLi → RCE and full database extraction",
+                        "card.dvwa.f2": "PHP webshell upload → interactive TTY reverse shell (netcat / socat)",
+                        "card.dvwa.f3": "Reflected, stored & DOM-based XSS, CSRF, LFI, weak session identifiers",
+                        "card.dvwa.f4": "Each flaw scored with CVSS, with a recommendation and fixed code",
+                        "card.ad.title": "Active Directory Penetration Test — Domain Compromise",
+                        "card.ad.desc": "End-to-end compromise of a Windows Server 2019 domain controller (Active Directory), from reconnaissance to <strong>full domain control</strong>. A complete offensive methodology, documented step by step, with technical analysis and defensive lessons at each phase.",
+                        "card.ad.f1": "Reconnaissance & enumeration: Nmap, enum4linux, RID cycling, Kerbrute",
+                        "card.ad.f2": "AS-REP Roasting → offline hash cracking with Hashcat",
+                        "card.ad.f3": "Lateral movement: SMB share, Base64 credentials, LDAP enumeration",
+                        "card.ad.f4": "Final escalation: DCSync + Pass-the-Hash (Evil-WinRM) → Domain Admin",
+                        "card.cq.title": "CyberQuest — Pentest RPG",
+                        "card.cq.desc": "A gamified cybersecurity learning platform. Play as GHOST, a hacker infiltrating NEXUS Corp: move across a top-down map, attack machines from an integrated terminal, and progress through 5 specialized rooms guided by an AI mentor.",
+                        "card.cq.f1": "5 rooms: Web (DVWA), Active Directory, Linux, Prompt Injection, AI Core",
+                        "card.cq.f2": "Interactive top-down map with an integrated pentest terminal",
+                        "card.cq.f3": "AI MENTOR assistant powered by Gemini & Groq LLMs",
+                        "card.cq.f4": "Local VFS engine — instant ls/cd/pwd, zero API calls",
+                        "card.pentai.title": "PentAI — AI Vulnerability Triage",
+                        "card.pentai.desc": "A DevSecOps tool that fights alert fatigue by intelligently triaging and prioritizing scanner vulnerabilities using deep learning and threat intelligence, instead of blindly trusting raw scanner output.",
+                        "card.pentai.f1": "SecBERT semantic embeddings trained on over 11,000 real cases",
+                        "card.pentai.f2": "CISA KEV threat intelligence — actively exploited flaws are prioritized",
+                        "card.pentai.f3": "Universal parser for Nuclei & Nessus JSON exports",
+                        "card.pentai.f4": "Automated PDF audit reports with EN→FR translation",
+                        "card.nexus.title": "NEXUS — Intelligent Dashboard",
+                        "card.nexus.desc": "A modern full-stack solution to centralize, organize, and optimize your internship or job search. Inspired by agile methods, with a dynamic Kanban pipeline.",
+                        "card.nexus.f1": "Dynamic Kanban pipeline (drag-and-drop)",
+                        "card.nexus.f2": "Data extraction via web scraping",
+                        "card.nexus.f3": "Analytics and job-search KPIs",
+                        "card.nexus.f4": "Centralized document management",
+                        "card.scanner.title": "Web Vulnerability Scanner",
+                        "card.scanner.desc": "Automated, professional vulnerability scanner. Features a smart crawler, DOM extraction, and specialized testing engines (SQLi, XSS, CSRF) with HTML/JSON reports.",
+                        "card.scanner.f1": "Smart crawling and DOM extraction",
+                        "card.scanner.f2": "Specialized SQLi, XSS, and CSRF modules",
+                        "card.scanner.f3": "Automated authentication handling (Auth Core)",
+                        "card.scanner.f4": "Clear HTML/JSON report generation",
+                        "card.threat.title": "Real-Time Threat Dashboard",
+                        "card.threat.desc": "A real-time cybersecurity dashboard combining data visualization and monitoring. Designed to analyze security events and alert on them.",
+                        "card.threat.f1": "Real-time security log monitoring",
+                        "card.threat.f2": "Interactive data visualization",
+                        "card.threat.f3": "Automated threat alerting",
+                        "tag.monitoring": "Monitoring", "tag.seclogs": "Security logs", "tag.dataviz": "Visualization",
+                        "card.medieval.title": "Medieval Battle Simulator",
+                        "card.medieval.desc": "Real-time medieval battle simulator (RTS). Fully built in Python, with a custom game engine, a CLI/GUI view, and an AI implementation for advanced strategies.",
+                        "card.medieval.f1": "Custom engine and rendering (GUI & Terminal)",
+                        "card.medieval.f2": "AI implementation and strategy patterns",
+                        "card.medieval.f3": "Creating and loading custom scenarios",
+                        "tag.algorithms": "Algorithms", "tag.gameengine": "Game engine",
+                        "card.p2p.title": "MedievAIl Battle — Distributed P2P Game",
+                        "card.p2p.desc": "A decentralized peer-to-peer infrastructure for a medieval battle strategy game where multiple AI players compete over the network with no central server. Networking course project (STI3A).",
+                        "card.p2p.f1": "Decentralized P2P architecture (no central server)",
+                        "card.p2p.f2": "Hybrid stack: Python game logic + C network daemon",
+                        "card.p2p.f3": "\"Network Ownership\" consensus protocol to avoid conflicts",
+                        "card.p2p.f4": "Local IPC over UDP sockets between processes",
+                        "tag.udptcp": "UDP / TCP sockets",
+                        "contact.kicker": "02. What's next?", "contact.title": "Let's get in touch",
+                        "contact.p": "I'm currently open to new opportunities in cybersecurity. Whether you have a question, a proposal, or simply want to connect, my inbox is always open!",
+                        "contact.langLabel": "Languages", "contact.langValue": "French (native), English (fluent)",
+                        "footer.text": "Designed and built by Jamai Ali",
+                        "gallery.title": "Photos — Cybersup × Root-Me Pro CTF",
+                        "gallery.caption": "Click a photo to open it full-size · Esc to close"
+                    },
+                    es: {
+                        "nav.about": "~/sobre-mí", "nav.projects": "~/proyectos", "nav.contact": "~/contacto",
+                        "hero.greeting": "Hello World, soy",
+                        "hero.p1": "Estudiante de ingeniería en ciberseguridad en el INSA Centre Val de Loire (Francia), especializado en tecnologías de seguridad y sistemas de información. Mis intereses se centran en la detección de amenazas, el análisis de vulnerabilidades y el diseño de infraestructuras seguras.",
+                        "hero.p2": "A través de mis proyectos académicos y mi trabajo práctico, exploro áreas como la seguridad de redes, las pruebas de intrusión, la inteligencia de amenazas y los sistemas de supervisión de seguridad. Me gusta crear herramientas y plataformas que transforman datos de seguridad complejos en información accionable.",
+                        "hero.p3": "Este portafolio muestra mis proyectos técnicos, mi trabajo de investigación y mis experimentos en ciberseguridad, incluidos paneles de seguridad, herramientas de análisis de vulnerabilidades y estudios de seguridad de infraestructura.",
+                        "hero.p4": "Actualmente busco unas prácticas en ciberseguridad de 4 meses, de principios de abril a finales de julio de 2026, donde pueda contribuir a retos de seguridad reales mientras sigo desarrollando mi experiencia.",
+                        "hero.ctf": "en el CTF", "hero.ctfDate": "— junio de 2026",
+                        "hero.classementCaption": "Clasificación final — clic para ampliar",
+                        "hero.galleryBtn": "Ver las fotos del CTF",
+                        "hero.btnProjects": "Ver mis proyectos", "hero.btnContact": "Contáctame",
+                        "projects.title": "Proyectos técnicos",
+                        "label.report": "Informe", "label.done": "Completado",
+                        "label.keyfeatures": "Funciones clave:", "label.strengths": "Puntos destacados:", "label.attackchain": "Cadena de ataque:",
+                        "link.source": "Código fuente", "link.demo": "Demo", "link.report": "Leer el informe",
+                        "card.dvwa.title": "Test de intrusión web — DVWA (OWASP Top 10)",
+                        "card.dvwa.desc": "Informe completo de test de intrusión de aplicación sobre DVWA (configuración <span class=\"font-mono\">Low</span>), alineado con el OWASP Top 10 2021. <strong>12 vulnerabilidades identificadas y explotadas</strong> — 4 de ellas críticas, que llevan al compromiso total del servidor — cada una documentada con prueba de concepto, código fuente vulnerable y corrección detallada.",
+                        "card.dvwa.f1": "Inyección de comandos del SO y SQLi → RCE y extracción completa de la base de datos",
+                        "card.dvwa.f2": "Subida de webshell PHP → reverse shell TTY interactivo (netcat / socat)",
+                        "card.dvwa.f3": "XSS reflejado, almacenado y basado en DOM, CSRF, LFI, identificadores de sesión débiles",
+                        "card.dvwa.f4": "Cada fallo puntuado con CVSS, con recomendación y código corregido",
+                        "card.ad.title": "Test de intrusión de Active Directory — Compromiso de dominio",
+                        "card.ad.desc": "Compromiso de extremo a extremo de un controlador de dominio Windows Server 2019 (Active Directory), desde el reconocimiento hasta el <strong>control total del dominio</strong>. Una metodología ofensiva completa, documentada paso a paso, con análisis técnico y lecciones defensivas en cada fase.",
+                        "card.ad.f1": "Reconocimiento y enumeración: Nmap, enum4linux, RID cycling, Kerbrute",
+                        "card.ad.f2": "AS-REP Roasting → cracking de hash offline con Hashcat",
+                        "card.ad.f3": "Movimiento lateral: recurso SMB, credenciales en Base64, enumeración LDAP",
+                        "card.ad.f4": "Escalada final: DCSync + Pass-the-Hash (Evil-WinRM) → Domain Admin",
+                        "card.cq.title": "CyberQuest — RPG de Pentest",
+                        "card.cq.desc": "Una plataforma gamificada de aprendizaje de ciberseguridad. Encarna a GHOST, un hacker que se infiltra en NEXUS Corp: muévete por un mapa cenital, ataca máquinas desde una terminal integrada y progresa por 5 salas especializadas guiadas por una IA mentora.",
+                        "card.cq.f1": "5 salas: Web (DVWA), Active Directory, Linux, Prompt Injection, AI Core",
+                        "card.cq.f2": "Mapa interactivo cenital con terminal de pentest integrada",
+                        "card.cq.f3": "Asistente de IA MENTOR impulsado por los LLM Gemini y Groq",
+                        "card.cq.f4": "Motor VFS local — ls/cd/pwd instantáneos, cero llamadas a API",
+                        "card.pentai.title": "PentAI — Triaje de vulnerabilidades con IA",
+                        "card.pentai.desc": "Una herramienta DevSecOps que combate la fatiga de alertas clasificando y priorizando de forma inteligente las vulnerabilidades de los escáneres mediante deep learning e inteligencia de amenazas, en lugar de confiar ciegamente en los resultados en bruto.",
+                        "card.pentai.f1": "Embeddings semánticos SecBERT entrenados con más de 11 000 casos reales",
+                        "card.pentai.f2": "Inteligencia de amenazas CISA KEV — se priorizan los fallos explotados activamente",
+                        "card.pentai.f3": "Parser universal para las exportaciones JSON de Nuclei y Nessus",
+                        "card.pentai.f4": "Informes de auditoría PDF automáticos con traducción EN→FR",
+                        "card.nexus.title": "NEXUS — Panel inteligente",
+                        "card.nexus.desc": "Una solución full-stack moderna para centralizar, organizar y optimizar tu búsqueda de prácticas o empleo. Inspirada en métodos ágiles, con un pipeline Kanban dinámico.",
+                        "card.nexus.f1": "Pipeline Kanban dinámico (arrastrar y soltar)",
+                        "card.nexus.f2": "Extracción de datos mediante web scraping",
+                        "card.nexus.f3": "Analítica y KPI de búsqueda de empleo",
+                        "card.nexus.f4": "Gestión centralizada de documentos",
+                        "card.scanner.title": "Escáner de vulnerabilidades web",
+                        "card.scanner.desc": "Escáner de vulnerabilidades profesional y automatizado. Incluye un crawler inteligente, extracción del DOM y motores de prueba especializados (SQLi, XSS, CSRF) con informes HTML/JSON.",
+                        "card.scanner.f1": "Crawling inteligente y extracción del DOM",
+                        "card.scanner.f2": "Módulos especializados SQLi, XSS y CSRF",
+                        "card.scanner.f3": "Gestión automatizada de la autenticación (Auth Core)",
+                        "card.scanner.f4": "Generación de informes HTML/JSON claros",
+                        "card.threat.title": "Panel de amenazas en tiempo real",
+                        "card.threat.desc": "Un panel de ciberseguridad en tiempo real que combina visualización de datos y supervisión. Diseñado para analizar eventos de seguridad y alertar sobre ellos.",
+                        "card.threat.f1": "Supervisión de logs de seguridad en tiempo real",
+                        "card.threat.f2": "Visualización de datos interactiva",
+                        "card.threat.f3": "Alertas automatizadas de amenazas",
+                        "tag.monitoring": "Supervisión", "tag.seclogs": "Logs de seguridad", "tag.dataviz": "Visualización",
+                        "card.medieval.title": "Simulador de batalla medieval",
+                        "card.medieval.desc": "Simulador de batalla medieval en tiempo real (RTS). Desarrollado íntegramente en Python, con un motor de juego propio, una vista CLI/GUI y una implementación de IA para estrategias avanzadas.",
+                        "card.medieval.f1": "Motor y renderizado propios (GUI y Terminal)",
+                        "card.medieval.f2": "Implementación de IA y patrones de estrategia",
+                        "card.medieval.f3": "Creación y carga de escenarios personalizados",
+                        "tag.algorithms": "Algoritmos", "tag.gameengine": "Motor de juego",
+                        "card.p2p.title": "MedievAIl Battle — Juego P2P distribuido",
+                        "card.p2p.desc": "Una infraestructura peer-to-peer descentralizada para un juego de estrategia de batalla medieval donde varios jugadores de IA compiten por la red sin servidor central. Proyecto de la asignatura de redes (STI3A).",
+                        "card.p2p.f1": "Arquitectura P2P descentralizada (sin servidor central)",
+                        "card.p2p.f2": "Stack híbrido: lógica de juego en Python + daemon de red en C",
+                        "card.p2p.f3": "Protocolo de consenso «Network Ownership» para evitar conflictos",
+                        "card.p2p.f4": "IPC local mediante sockets UDP entre procesos",
+                        "tag.udptcp": "Sockets UDP / TCP",
+                        "contact.kicker": "02. ¿Y ahora qué?", "contact.title": "Pongámonos en contacto",
+                        "contact.p": "Actualmente estoy abierto a nuevas oportunidades en ciberseguridad. Ya sea que tengas una pregunta, una propuesta o simplemente quieras contactar, ¡mi bandeja de entrada siempre está abierta!",
+                        "contact.langLabel": "Idiomas", "contact.langValue": "Francés (nativo), Inglés (fluido)",
+                        "footer.text": "Diseñado y desarrollado por Jamai Ali",
+                        "gallery.title": "Fotos — CTF Cybersup × Root-Me Pro",
+                        "gallery.caption": "Haz clic en una foto para abrirla en grande · Esc para cerrar"
+                    },
+                    ar: {
+                        "nav.about": "~/نبذة", "nav.projects": "~/المشاريع", "nav.contact": "~/تواصل",
+                        "hero.greeting": "Hello World، أنا",
+                        "hero.p1": "طالب هندسة الأمن السيبراني في INSA Centre Val de Loire (فرنسا)، متخصص في تقنيات الأمن ونظم المعلومات. تتركّز اهتماماتي على اكتشاف التهديدات وتحليل الثغرات وتصميم البنى التحتية الآمنة.",
+                        "hero.p2": "من خلال مشاريعي الأكاديمية وأعمالي التطبيقية، أستكشف مجالات مثل أمن الشبكات واختبار الاختراق واستخبارات التهديدات وأنظمة مراقبة الأمن. أستمتع ببناء أدوات ومنصات تحوّل بيانات الأمن المعقّدة إلى معلومات قابلة للتنفيذ.",
+                        "hero.p3": "يعرض هذا الملف مشاريعي التقنية وأعمالي البحثية وتجاربي في الأمن السيبراني، بما في ذلك لوحات معلومات الأمن وأدوات تحليل الثغرات ودراسات أمن البنية التحتية.",
+                        "hero.p4": "أبحث حاليًا عن تدريب في الأمن السيبراني لمدة 4 أشهر، من بداية أبريل إلى نهاية يوليو 2026، حيث يمكنني المساهمة في تحديات أمنية واقعية مع مواصلة تطوير خبرتي.",
+                        "hero.ctf": "في مسابقة CTF", "hero.ctfDate": "— يونيو 2026",
+                        "hero.classementCaption": "الترتيب النهائي — اضغط للتكبير",
+                        "hero.galleryBtn": "عرض صور الـ CTF",
+                        "hero.btnProjects": "مشاهدة مشاريعي", "hero.btnContact": "تواصل معي",
+                        "projects.title": "المشاريع التقنية",
+                        "label.report": "تقرير", "label.done": "مكتمل",
+                        "label.keyfeatures": "الميزات الرئيسية:", "label.strengths": "أبرز النقاط:", "label.attackchain": "سلسلة الهجوم:",
+                        "link.source": "الكود المصدري", "link.demo": "عرض توضيحي", "link.report": "قراءة التقرير",
+                        "card.dvwa.title": "اختبار اختراق ويب — DVWA (OWASP Top 10)",
+                        "card.dvwa.desc": "تقرير كامل لاختبار اختراق تطبيقي على DVWA (إعداد <span class=\"font-mono\">Low</span>)، متوافق مع OWASP Top 10 2021. <strong>تم تحديد واستغلال 12 ثغرة</strong> — منها 4 حرجة تؤدي إلى اختراق كامل للخادم — وكل واحدة موثّقة بإثبات مفهوم وكود مصدري مصاب وتصحيح مفصّل.",
+                        "card.dvwa.f1": "حقن أوامر نظام التشغيل و SQLi → تنفيذ أوامر عن بُعد واستخراج كامل لقاعدة البيانات",
+                        "card.dvwa.f2": "رفع webshell بلغة PHP → غلاف عكسي تفاعلي TTY (netcat / socat)",
+                        "card.dvwa.f3": "XSS من النوع المنعكس والمخزَّن وDOM-based، وCSRF وLFI ومعرّفات جلسات ضعيفة",
+                        "card.dvwa.f4": "كل ثغرة مقيَّمة بـ CVSS مع توصية وكود مصحّح",
+                        "card.ad.title": "اختبار اختراق Active Directory — اختراق النطاق",
+                        "card.ad.desc": "اختراق شامل لوحدة تحكم نطاق Windows Server 2019 (Active Directory)، من الاستطلاع حتى <strong>السيطرة الكاملة على النطاق</strong>. منهجية هجومية كاملة موثّقة خطوة بخطوة، مع تحليل تقني ودروس دفاعية في كل مرحلة.",
+                        "card.ad.f1": "الاستطلاع والتعداد: Nmap، enum4linux، RID cycling، Kerbrute",
+                        "card.ad.f2": "AS-REP Roasting → كسر الهاش دون اتصال باستخدام Hashcat",
+                        "card.ad.f3": "الحركة الجانبية: مشاركة SMB، بيانات اعتماد بترميز Base64، تعداد LDAP",
+                        "card.ad.f4": "التصعيد النهائي: DCSync + Pass-the-Hash (Evil-WinRM) → Domain Admin",
+                        "card.cq.title": "CyberQuest — لعبة RPG للاختراق",
+                        "card.cq.desc": "منصة تعليمية للأمن السيبراني بأسلوب اللعب. تلعب دور GHOST، هاكر يتسلّل إلى NEXUS Corp: تتنقّل على خريطة علوية، وتهاجم الأجهزة من طرفية مدمجة، وتتقدّم عبر 5 غرف متخصصة بإرشاد من مساعد ذكاء اصطناعي.",
+                        "card.cq.f1": "5 غرف: Web (DVWA)، Active Directory، Linux، Prompt Injection، AI Core",
+                        "card.cq.f2": "خريطة تفاعلية بمنظور علوي مع طرفية اختراق مدمجة",
+                        "card.cq.f3": "مساعد ذكاء اصطناعي MENTOR مدعوم بنماذج Gemini و Groq",
+                        "card.cq.f4": "محرك VFS محلي — ls/cd/pwd فوري، دون أي استدعاء API",
+                        "card.pentai.title": "PentAI — فرز الثغرات بالذكاء الاصطناعي",
+                        "card.pentai.desc": "أداة DevSecOps تكافح إرهاق التنبيهات عبر فرز وترتيب ثغرات الماسحات بذكاء باستخدام التعلّم العميق واستخبارات التهديدات، بدلاً من الثقة العمياء في النتائج الخام للماسحات.",
+                        "card.pentai.f1": "تمثيلات دلالية SecBERT مدرَّبة على أكثر من 11٬000 حالة واقعية",
+                        "card.pentai.f2": "استخبارات تهديدات CISA KEV — إعطاء الأولوية للثغرات المُستغَلة فعليًا",
+                        "card.pentai.f3": "محلّل عام لمخرجات JSON من Nuclei و Nessus",
+                        "card.pentai.f4": "تقارير تدقيق PDF تلقائية مع ترجمة من الإنجليزية إلى الفرنسية",
+                        "card.nexus.title": "NEXUS — لوحة تحكم ذكية",
+                        "card.nexus.desc": "حل full-stack حديث لتجميع وتنظيم وتحسين البحث عن تدريب أو وظيفة. مستوحى من المنهجيات الرشيقة، مع مسار Kanban ديناميكي.",
+                        "card.nexus.f1": "مسار Kanban ديناميكي (سحب وإفلات)",
+                        "card.nexus.f2": "استخراج البيانات عبر web scraping",
+                        "card.nexus.f3": "تحليلات ومؤشرات أداء للبحث عن عمل",
+                        "card.nexus.f4": "إدارة مركزية للمستندات",
+                        "card.scanner.title": "ماسح ثغرات الويب",
+                        "card.scanner.desc": "ماسح ثغرات احترافي وآلي. يتضمّن زاحفًا ذكيًا واستخراج DOM ومحركات اختبار متخصصة (SQLi، XSS، CSRF) مع تقارير HTML/JSON.",
+                        "card.scanner.f1": "زحف ذكي واستخراج DOM",
+                        "card.scanner.f2": "وحدات متخصصة لـ SQLi و XSS و CSRF",
+                        "card.scanner.f3": "إدارة آلية للمصادقة (Auth Core)",
+                        "card.scanner.f4": "توليد تقارير HTML/JSON واضحة",
+                        "card.threat.title": "لوحة معلومات التهديدات في الوقت الفعلي",
+                        "card.threat.desc": "لوحة معلومات أمن سيبراني في الوقت الفعلي تجمع بين تصوّر البيانات والمراقبة. مصمّمة لتحليل الأحداث الأمنية والتنبيه بشأنها.",
+                        "card.threat.f1": "مراقبة سجلات الأمن في الوقت الفعلي",
+                        "card.threat.f2": "تصوّر تفاعلي للبيانات",
+                        "card.threat.f3": "تنبيه آلي بشأن التهديدات",
+                        "tag.monitoring": "مراقبة", "tag.seclogs": "سجلات الأمن", "tag.dataviz": "تصوّر البيانات",
+                        "card.medieval.title": "محاكي معارك القرون الوسطى",
+                        "card.medieval.desc": "محاكي معارك القرون الوسطى في الوقت الفعلي (RTS). مبني بالكامل بلغة Python، مع محرك ألعاب مخصّص، وواجهة CLI/GUI، وتطبيق ذكاء اصطناعي لاستراتيجيات متقدمة.",
+                        "card.medieval.f1": "محرك وعرض مخصّص (GUI و Terminal)",
+                        "card.medieval.f2": "تنفيذ ذكاء اصطناعي وأنماط استراتيجية",
+                        "card.medieval.f3": "إنشاء وتحميل سيناريوهات مخصّصة",
+                        "tag.algorithms": "خوارزميات", "tag.gameengine": "محرك ألعاب",
+                        "card.p2p.title": "MedievAIl Battle — لعبة P2P موزّعة",
+                        "card.p2p.desc": "بنية تحتية لامركزية من نوع نظير-إلى-نظير للعبة استراتيجية معارك من القرون الوسطى، حيث يتنافس عدة لاعبين بالذكاء الاصطناعي عبر الشبكة دون خادم مركزي. مشروع مادة الشبكات (STI3A).",
+                        "card.p2p.f1": "بنية P2P لامركزية (بدون خادم مركزي)",
+                        "card.p2p.f2": "حزمة هجينة: منطق اللعبة بلغة Python + خدمة شبكة بلغة C",
+                        "card.p2p.f3": "بروتوكول إجماع «Network Ownership» لتجنّب التعارضات",
+                        "card.p2p.f4": "IPC محلي عبر مقابس UDP بين العمليات",
+                        "tag.udptcp": "مقابس UDP / TCP",
+                        "contact.kicker": "02. ماذا بعد؟", "contact.title": "لنتواصل",
+                        "contact.p": "أنا منفتح حاليًا على فرص جديدة في الأمن السيبراني. سواء كان لديك سؤال أو اقتراح أو ترغب فقط في التواصل، فإن صندوق بريدي مفتوح دائمًا!",
+                        "contact.langLabel": "اللغات", "contact.langValue": "الفرنسية (لغة أم)، الإنجليزية (بطلاقة)",
+                        "footer.text": "تصميم وتطوير Jamai Ali",
+                        "gallery.title": "صور — CTF Cybersup × Root-Me Pro",
+                        "gallery.caption": "اضغط على صورة لفتحها بالحجم الكامل · Esc للإغلاق"
+                    }
+                };
+
+                const flags = { fr: 'fr', en: 'gb', ar: 'sa', es: 'es' };
+                const labels = { fr: 'FR', en: 'EN', ar: 'AR', es: 'ES' };
+
+                // Capture French defaults from the DOM
+                const fr = {};
+                document.querySelectorAll('[data-i18n]').forEach(el => { fr[el.getAttribute('data-i18n')] = el.innerHTML; });
+                translations.fr = fr;
+
+                function setLang(lang) {
+                    const dict = translations[lang] || fr;
+                    document.querySelectorAll('[data-i18n]').forEach(el => {
+                        const k = el.getAttribute('data-i18n');
+                        const val = (dict[k] != null) ? dict[k] : fr[k];
+                        if (val != null) el.innerHTML = val;
+                    });
+                    document.documentElement.lang = lang;
+                    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+                    document.querySelectorAll('[data-lang-flag]').forEach(img => { img.src = 'https://flagcdn.com/24x18/' + flags[lang] + '.png'; });
+                    document.querySelectorAll('[data-lang-label]').forEach(s => { s.textContent = labels[lang]; });
+                    try { localStorage.setItem('portfolio-lang', lang); } catch (e) { }
+                    if (window.lucide) lucide.createIcons();
+                }
+
+                const btn = document.getElementById('lang-btn');
+                const menu = document.getElementById('lang-menu');
+                if (btn && menu) {
+                    btn.addEventListener('click', e => { e.stopPropagation(); menu.classList.toggle('hidden'); });
+                    document.addEventListener('click', () => menu.classList.add('hidden'));
+                    menu.addEventListener('click', e => e.stopPropagation());
+                }
+                document.querySelectorAll('[data-lang]').forEach(b => {
+                    b.addEventListener('click', () => {
+                        setLang(b.getAttribute('data-lang'));
+                        if (menu) menu.classList.add('hidden');
+                    });
+                });
+
+                let saved = null;
+                try { saved = localStorage.getItem('portfolio-lang'); } catch (e) { }
+                if (saved && saved !== 'fr') setLang(saved);
             })();
         </script>
 </body>
