@@ -260,6 +260,62 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project: Shellter — On-demand Linux environment rental platform -->
+            <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4" data-i18n="card.shellter.title">Shellter — Location d'environnements Linux à la demande</h3>
+                    <span
+                        class="px-3 py-1 bg-green-900/30 text-green-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-green-500/20"
+                        data-i18n="label.done">Terminé</span>
+                </div>
+
+                <p class="text-muted text-sm mb-6" data-i18n="card.shellter.desc">
+                    Plateforme web pour louer en quelques clics un environnement Linux temporaire accessible en SSH.
+                    Architecture distribuée control plane / workers, infrastructure reproductible par code et service
+                    résilient à reprise automatique sur panne (self-healing).
+                </p>
+
+                <div class="mb-6 flex-grow">
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded"
+                        data-i18n="label.keyfeatures">Fonctionnalités clés :</h4>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="card.shellter.f1">Architecture distribuée control plane / workers (Flask, PostgreSQL, Nginx)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="card.shellter.f2">Provisioning automatique de conteneurs Linux isolés (Ubuntu / Debian / Alpine) via SSH</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="card.shellter.f3">Infrastructure as Code : Vagrant + Ansible (Docker, durcissement SSH, secrets Vault)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="card.shellter.f4">Resource Manager, reprise automatique sur panne (self-healing) et pipeline CI/CD</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-wrap gap-2 text-xs font-medium mb-6">
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Flask</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Docker</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Ansible</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Vagrant</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">PostgreSQL</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">CI/CD</span>
+                </div>
+
+                <div class="pt-4 border-t border-border flex items-center space-x-6">
+                    <a href="https://github.com/fatihamoltif/shellter" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
+                        <i data-lucide="layout-template" class="w-4 h-4 mr-2"></i>
+                        <span data-i18n="link.source">Code source</span>
+                    </a>
+                </div>
+            </div>
+
             <!-- Report: Web Pentest — DVWA (OWASP Top 10) -->
             <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
                 <div class="flex justify-between items-start mb-4">
@@ -894,6 +950,12 @@
                         "label.report": "Report", "label.done": "Completed",
                         "label.keyfeatures": "Key features:", "label.strengths": "Highlights:", "label.attackchain": "Attack chain:",
                         "link.source": "Source code", "link.demo": "Demo", "link.report": "Read the report",
+                        "card.shellter.title": "Shellter — On-demand Linux environment rental",
+                        "card.shellter.desc": "Web platform to rent, in a few clicks, a temporary SSH-accessible Linux environment. Distributed control-plane / workers architecture, fully reproducible infrastructure as code, and a resilient, self-healing service.",
+                        "card.shellter.f1": "Distributed control-plane / workers architecture (Flask, PostgreSQL, Nginx)",
+                        "card.shellter.f2": "Automatic provisioning of isolated Linux containers (Ubuntu / Debian / Alpine) over SSH",
+                        "card.shellter.f3": "Infrastructure as Code: Vagrant + Ansible (Docker, SSH hardening, Vault secrets)",
+                        "card.shellter.f4": "Resource Manager, automatic failover (self-healing) and CI/CD pipeline",
                         "card.dvwa.title": "Web Penetration Test — DVWA (OWASP Top 10)",
                         "card.dvwa.desc": "Complete application penetration test report on DVWA (<span class=\"font-mono\">Low</span> configuration), aligned with the OWASP Top 10 2021. <strong>12 vulnerabilities identified and exploited</strong> — 4 of them critical, leading to full server compromise — each documented with a proof of concept, vulnerable source code, and a detailed fix.",
                         "card.dvwa.f1": "OS command injection & SQLi → RCE and full database extraction",
@@ -971,6 +1033,12 @@
                         "label.report": "Informe", "label.done": "Completado",
                         "label.keyfeatures": "Funciones clave:", "label.strengths": "Puntos destacados:", "label.attackchain": "Cadena de ataque:",
                         "link.source": "Código fuente", "link.demo": "Demo", "link.report": "Leer el informe",
+                        "card.shellter.title": "Shellter — Alquiler de entornos Linux bajo demanda",
+                        "card.shellter.desc": "Plataforma web para alquilar, en unos clics, un entorno Linux temporal accesible por SSH. Arquitectura distribuida control plane / workers, infraestructura reproducible como código y servicio resiliente con auto-recuperación.",
+                        "card.shellter.f1": "Arquitectura distribuida control plane / workers (Flask, PostgreSQL, Nginx)",
+                        "card.shellter.f2": "Aprovisionamiento automático de contenedores Linux aislados (Ubuntu / Debian / Alpine) por SSH",
+                        "card.shellter.f3": "Infrastructure as Code: Vagrant + Ansible (Docker, hardening SSH, secretos con Vault)",
+                        "card.shellter.f4": "Resource Manager, conmutación por error automática (self-healing) y pipeline CI/CD",
                         "card.dvwa.title": "Test de intrusión web — DVWA (OWASP Top 10)",
                         "card.dvwa.desc": "Informe completo de test de intrusión de aplicación sobre DVWA (configuración <span class=\"font-mono\">Low</span>), alineado con el OWASP Top 10 2021. <strong>12 vulnerabilidades identificadas y explotadas</strong> — 4 de ellas críticas, que llevan al compromiso total del servidor — cada una documentada con prueba de concepto, código fuente vulnerable y corrección detallada.",
                         "card.dvwa.f1": "Inyección de comandos del SO y SQLi → RCE y extracción completa de la base de datos",
@@ -1048,6 +1116,12 @@
                         "label.report": "تقرير", "label.done": "مكتمل",
                         "label.keyfeatures": "الميزات الرئيسية:", "label.strengths": "أبرز النقاط:", "label.attackchain": "سلسلة الهجوم:",
                         "link.source": "الكود المصدري", "link.demo": "عرض توضيحي", "link.report": "قراءة التقرير",
+                        "card.shellter.title": "Shellter — تأجير بيئات Linux عند الطلب",
+                        "card.shellter.desc": "منصة ويب لتأجير بيئة Linux مؤقتة يمكن الوصول إليها عبر SSH ببضع نقرات. بنية موزّعة control plane / workers، وبنية تحتية قابلة لإعادة الإنتاج ككود، وخدمة مرنة ذاتية التعافي.",
+                        "card.shellter.f1": "بنية موزّعة control plane / workers (Flask، PostgreSQL، Nginx)",
+                        "card.shellter.f2": "توفير تلقائي لحاويات Linux معزولة (Ubuntu / Debian / Alpine) عبر SSH",
+                        "card.shellter.f3": "Infrastructure as Code: Vagrant + Ansible (Docker، تقوية SSH، أسرار عبر Vault)",
+                        "card.shellter.f4": "Resource Manager، وتجاوز تلقائي للأعطال (self-healing) وخط أنابيب CI/CD",
                         "card.dvwa.title": "اختبار اختراق ويب — DVWA (OWASP Top 10)",
                         "card.dvwa.desc": "تقرير كامل لاختبار اختراق تطبيقي على DVWA (إعداد <span class=\"font-mono\">Low</span>)، متوافق مع OWASP Top 10 2021. <strong>تم تحديد واستغلال 12 ثغرة</strong> — منها 4 حرجة تؤدي إلى اختراق كامل للخادم — وكل واحدة موثّقة بإثبات مفهوم وكود مصدري مصاب وتصحيح مفصّل.",
                         "card.dvwa.f1": "حقن أوامر نظام التشغيل و SQLi → تنفيذ أوامر عن بُعد واستخراج كامل لقاعدة البيانات",
