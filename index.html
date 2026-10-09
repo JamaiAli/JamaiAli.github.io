@@ -260,6 +260,77 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Featured Project: SAF / Hydrogen — Hamburg Airport (ECIU, Airbus x University of Hamburg) -->
+            <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-2 ring-accent/60 bg-accent/5 md:col-span-2 lg:col-span-2">
+                <div class="flex justify-between items-start mb-3 gap-3">
+                    <div>
+                        <span class="inline-block mb-2 px-2.5 py-0.5 rounded-full bg-accent/15 text-accent text-[11px] font-bold uppercase tracking-wider border border-accent/30"
+                            data-i18n="label.featured">★ Projet mis en avant</span>
+                        <h3 class="text-xl font-bold text-gray-100" data-i18n="card.saf.title">Hydrogène &amp; SAF pour l'aéroport de Hambourg</h3>
+                    </div>
+                    <span
+                        class="px-3 py-1 bg-blue-900/30 text-blue-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-blue-500/20 flex-shrink-0"
+                        data-i18n="label.report">Rapport</span>
+                </div>
+
+                <div class="flex items-center flex-wrap gap-3 mb-5">
+                    <span class="text-xs text-muted font-mono" data-i18n="label.collab">En collaboration avec :</span>
+                    <div class="flex items-center gap-3">
+                        <div class="bg-white rounded-md px-3 py-2 flex items-center">
+                            <img src="assets/partners/airbus.svg" alt="Airbus" class="h-6 w-auto" loading="lazy">
+                        </div>
+                        <div class="bg-white rounded-md px-3 py-1.5 flex items-center">
+                            <img src="assets/partners/uni-hamburg.svg" alt="Universität Hamburg" class="h-9 w-auto" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-muted text-sm mb-6" data-i18n="card.saf.desc">
+                    Étude technico-économique (challenge ECIU University, en collaboration avec <strong>Airbus</strong> et
+                    l'<strong>Université de Hambourg</strong>) comparant des modèles de production d'hydrogène vert pour
+                    décarboner l'aéroport de Hambourg : production locale (éolien, solaire en toiture) face à l'import depuis le Maroc.
+                </p>
+
+                <div class="mb-6 flex-grow">
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded"
+                        data-i18n="label.strengths">Points forts :</h4>
+                    <ul class="grid sm:grid-cols-2 gap-2 gap-x-8 text-sm text-muted">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="card.saf.f1">Production locale : potentiel éolien et solaire en toiture (screening géospatial sous QGIS)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="card.saf.f2">Scénario d'import : hydrogène vert / bleu / gris au Maroc et transport (NH3, LOHC, LH2, pipeline)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="card.saf.f3">Modélisation du coût actualisé de l'hydrogène (LCOH) et prévisions de prix de l'énergie</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="card.saf.f4">Analyse comparative des scénarios et recommandations stratégiques (court / moyen / long terme)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-wrap gap-2 text-xs font-medium mb-6">
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">QGIS</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">LCOH</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">SAF</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Hydrogène vert</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">ECIU University</span>
+                </div>
+
+                <div class="pt-4 border-t border-border flex items-center space-x-6">
+                    <a href="reports/rapport-saf-hydrogene-hambourg.pdf" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
+                        <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
+                        <span data-i18n="link.report">Lire le rapport</span>
+                    </a>
+                </div>
+            </div>
+
             <!-- Project: Shellter — On-demand Linux environment rental platform -->
             <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
                 <div class="flex justify-between items-start mb-4">
@@ -427,61 +498,6 @@
 
                 <div class="pt-4 border-t border-border flex items-center space-x-6">
                     <a href="reports/rapport-pentest-active-directory.html" rel="noopener noreferrer"
-                        class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
-                        <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
-                        <span data-i18n="link.report">Lire le rapport</span>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Project: SAF / Hydrogen — Hamburg Airport (ECIU, Airbus x University of Hamburg) -->
-            <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
-                <div class="flex justify-between items-start mb-4">
-                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4" data-i18n="card.saf.title">Hydrogène &amp; SAF pour l'aéroport de Hambourg</h3>
-                    <span
-                        class="px-3 py-1 bg-blue-900/30 text-blue-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-blue-500/20"
-                        data-i18n="label.report">Rapport</span>
-                </div>
-
-                <p class="text-muted text-sm mb-6" data-i18n="card.saf.desc">
-                    Étude technico-économique (challenge ECIU University, en collaboration avec <strong>Airbus</strong> et
-                    l'<strong>Université de Hambourg</strong>) comparant des modèles de production d'hydrogène vert pour
-                    décarboner l'aéroport de Hambourg : production locale (éolien, solaire en toiture) face à l'import depuis le Maroc.
-                </p>
-
-                <div class="mb-6 flex-grow">
-                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded"
-                        data-i18n="label.strengths">Points forts :</h4>
-                    <ul class="space-y-2 text-sm text-muted">
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span data-i18n="card.saf.f1">Production locale : potentiel éolien et solaire en toiture (screening géospatial sous QGIS)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span data-i18n="card.saf.f2">Scénario d'import : hydrogène vert / bleu / gris au Maroc et transport (NH3, LOHC, LH2, pipeline)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span data-i18n="card.saf.f3">Modélisation du coût actualisé de l'hydrogène (LCOH) et prévisions de prix de l'énergie</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
-                            <span data-i18n="card.saf.f4">Analyse comparative des scénarios et recommandations stratégiques (court / moyen / long terme)</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="flex flex-wrap gap-2 text-xs font-medium mb-6">
-                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">QGIS</span>
-                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">LCOH</span>
-                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">SAF</span>
-                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Hydrogène vert</span>
-                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">ECIU University</span>
-                </div>
-
-                <div class="pt-4 border-t border-border flex items-center space-x-6">
-                    <a href="reports/rapport-saf-hydrogene-hambourg.pdf" target="_blank" rel="noopener noreferrer"
                         class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
                         <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
                         <span data-i18n="link.report">Lire le rapport</span>
@@ -1024,6 +1040,8 @@
                         "card.saf.f2": "Import scenario: green / blue / grey hydrogen in Morocco and transport (NH3, LOHC, LH2, pipeline)",
                         "card.saf.f3": "Levelized Cost of Hydrogen (LCOH) modeling and energy-price forecasting",
                         "card.saf.f4": "Comparative scenario analysis and strategic recommendations (short / medium / long term)",
+                        "label.featured": "★ Featured project",
+                        "label.collab": "In collaboration with:",
                         "card.dvwa.title": "Web Penetration Test — DVWA (OWASP Top 10)",
                         "card.dvwa.desc": "Complete application penetration test report on DVWA (<span class=\"font-mono\">Low</span> configuration), aligned with the OWASP Top 10 2021. <strong>12 vulnerabilities identified and exploited</strong> — 4 of them critical, leading to full server compromise — each documented with a proof of concept, vulnerable source code, and a detailed fix.",
                         "card.dvwa.f1": "OS command injection & SQLi → RCE and full database extraction",
@@ -1114,6 +1132,8 @@
                         "card.saf.f2": "Escenario de importación: hidrógeno verde / azul / gris en Marruecos y transporte (NH3, LOHC, LH2, tubería)",
                         "card.saf.f3": "Modelado del coste nivelado del hidrógeno (LCOH) y previsión de precios de la energía",
                         "card.saf.f4": "Análisis comparativo de escenarios y recomendaciones estratégicas (corto / medio / largo plazo)",
+                        "label.featured": "★ Proyecto destacado",
+                        "label.collab": "En colaboración con:",
                         "card.dvwa.title": "Test de intrusión web — DVWA (OWASP Top 10)",
                         "card.dvwa.desc": "Informe completo de test de intrusión de aplicación sobre DVWA (configuración <span class=\"font-mono\">Low</span>), alineado con el OWASP Top 10 2021. <strong>12 vulnerabilidades identificadas y explotadas</strong> — 4 de ellas críticas, que llevan al compromiso total del servidor — cada una documentada con prueba de concepto, código fuente vulnerable y corrección detallada.",
                         "card.dvwa.f1": "Inyección de comandos del SO y SQLi → RCE y extracción completa de la base de datos",
@@ -1204,6 +1224,8 @@
                         "card.saf.f2": "سيناريو الاستيراد: هيدروجين أخضر / أزرق / رمادي في المغرب والنقل (NH3، LOHC، LH2، أنابيب)",
                         "card.saf.f3": "نمذجة التكلفة المُنتظمة للهيدروجين (LCOH) وتوقّع أسعار الطاقة",
                         "card.saf.f4": "تحليل مقارن للسيناريوهات وتوصيات استراتيجية (قصيرة / متوسطة / طويلة المدى)",
+                        "label.featured": "★ مشروع مميّز",
+                        "label.collab": "بالتعاون مع:",
                         "card.dvwa.title": "اختبار اختراق ويب — DVWA (OWASP Top 10)",
                         "card.dvwa.desc": "تقرير كامل لاختبار اختراق تطبيقي على DVWA (إعداد <span class=\"font-mono\">Low</span>)، متوافق مع OWASP Top 10 2021. <strong>تم تحديد واستغلال 12 ثغرة</strong> — منها 4 حرجة تؤدي إلى اختراق كامل للخادم — وكل واحدة موثّقة بإثبات مفهوم وكود مصدري مصاب وتصحيح مفصّل.",
                         "card.dvwa.f1": "حقن أوامر نظام التشغيل و SQLi → تنفيذ أوامر عن بُعد واستخراج كامل لقاعدة البيانات",
