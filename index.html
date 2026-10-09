@@ -434,6 +434,61 @@
                 </div>
             </div>
 
+            <!-- Project: SAF / Hydrogen — Hamburg Airport (ECIU, Airbus x University of Hamburg) -->
+            <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="text-xl font-bold text-gray-100 flex-1 pr-4" data-i18n="card.saf.title">Hydrogène &amp; SAF pour l'aéroport de Hambourg</h3>
+                    <span
+                        class="px-3 py-1 bg-blue-900/30 text-blue-400 text-xs font-bold rounded-full uppercase tracking-wider whitespace-nowrap border border-blue-500/20"
+                        data-i18n="label.report">Rapport</span>
+                </div>
+
+                <p class="text-muted text-sm mb-6" data-i18n="card.saf.desc">
+                    Étude technico-économique (challenge ECIU University, en collaboration avec <strong>Airbus</strong> et
+                    l'<strong>Université de Hambourg</strong>) comparant des modèles de production d'hydrogène vert pour
+                    décarboner l'aéroport de Hambourg : production locale (éolien, solaire en toiture) face à l'import depuis le Maroc.
+                </p>
+
+                <div class="mb-6 flex-grow">
+                    <h4 class="text-sm font-semibold text-gray-300 mb-3 bg-gray-800/50 inline-block px-2 py-1 rounded"
+                        data-i18n="label.strengths">Points forts :</h4>
+                    <ul class="space-y-2 text-sm text-muted">
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="card.saf.f1">Production locale : potentiel éolien et solaire en toiture (screening géospatial sous QGIS)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="card.saf.f2">Scénario d'import : hydrogène vert / bleu / gris au Maroc et transport (NH3, LOHC, LH2, pipeline)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="card.saf.f3">Modélisation du coût actualisé de l'hydrogène (LCOH) et prévisions de prix de l'énergie</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span data-i18n="card.saf.f4">Analyse comparative des scénarios et recommandations stratégiques (court / moyen / long terme)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-wrap gap-2 text-xs font-medium mb-6">
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">QGIS</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">LCOH</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">SAF</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">Hydrogène vert</span>
+                    <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-full">ECIU University</span>
+                </div>
+
+                <div class="pt-4 border-t border-border flex items-center space-x-6">
+                    <a href="reports/rapport-saf-hydrogene-hambourg.pdf" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-semibold">
+                        <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
+                        <span data-i18n="link.report">Lire le rapport</span>
+                    </a>
+                </div>
+            </div>
+
             <!-- Project: CyberQuest — Pentest RPG -->
             <div class="cyber-card rounded-lg p-6 flex flex-col h-full ring-1 ring-border bg-surface/50">
                 <div class="flex justify-between items-start mb-4">
@@ -963,6 +1018,12 @@
                         "card.shellter.f3": "Per-user quotas, extension, automatic expiry, encrypted SSH passwords and an admin role",
                         "card.shellter.f4": "Reproducible infrastructure: 4 VMs via Vagrant + Ansible (hardening, TLS, DNS, clock sync), versioned migrations (Flask-Migrate)",
                         "card.shellter.f5": "GitHub Actions CI: 55 tests + security scans (Semgrep, gitleaks, Trivy); Kubernetes branch as an extension",
+                        "card.saf.title": "Hydrogen & SAF for Hamburg Airport",
+                        "card.saf.desc": "Techno-economic study (ECIU University challenge, in collaboration with <strong>Airbus</strong> and the <strong>University of Hamburg</strong>) comparing green-hydrogen production models to decarbonize Hamburg Airport: local production (wind, rooftop solar) versus import from Morocco.",
+                        "card.saf.f1": "Local production: wind and rooftop-solar potential (geospatial screening in QGIS)",
+                        "card.saf.f2": "Import scenario: green / blue / grey hydrogen in Morocco and transport (NH3, LOHC, LH2, pipeline)",
+                        "card.saf.f3": "Levelized Cost of Hydrogen (LCOH) modeling and energy-price forecasting",
+                        "card.saf.f4": "Comparative scenario analysis and strategic recommendations (short / medium / long term)",
                         "card.dvwa.title": "Web Penetration Test — DVWA (OWASP Top 10)",
                         "card.dvwa.desc": "Complete application penetration test report on DVWA (<span class=\"font-mono\">Low</span> configuration), aligned with the OWASP Top 10 2021. <strong>12 vulnerabilities identified and exploited</strong> — 4 of them critical, leading to full server compromise — each documented with a proof of concept, vulnerable source code, and a detailed fix.",
                         "card.dvwa.f1": "OS command injection & SQLi → RCE and full database extraction",
@@ -1047,6 +1108,12 @@
                         "card.shellter.f3": "Cuotas por usuario, prolongación, expiración automática, cifrado de contraseñas SSH y rol de administrador",
                         "card.shellter.f4": "Infraestructura reproducible: 4 VM con Vagrant + Ansible (hardening, TLS, DNS, reloj), migraciones versionadas (Flask-Migrate)",
                         "card.shellter.f5": "CI con GitHub Actions: 55 pruebas + escaneos de seguridad (Semgrep, gitleaks, Trivy); rama Kubernetes como ampliación",
+                        "card.saf.title": "Hidrógeno y SAF para el aeropuerto de Hamburgo",
+                        "card.saf.desc": "Estudio tecnoeconómico (reto de ECIU University, en colaboración con <strong>Airbus</strong> y la <strong>Universidad de Hamburgo</strong>) que compara modelos de producción de hidrógeno verde para descarbonizar el aeropuerto de Hamburgo: producción local (eólica, solar en tejados) frente a importación desde Marruecos.",
+                        "card.saf.f1": "Producción local: potencial eólico y solar en tejados (análisis geoespacial con QGIS)",
+                        "card.saf.f2": "Escenario de importación: hidrógeno verde / azul / gris en Marruecos y transporte (NH3, LOHC, LH2, tubería)",
+                        "card.saf.f3": "Modelado del coste nivelado del hidrógeno (LCOH) y previsión de precios de la energía",
+                        "card.saf.f4": "Análisis comparativo de escenarios y recomendaciones estratégicas (corto / medio / largo plazo)",
                         "card.dvwa.title": "Test de intrusión web — DVWA (OWASP Top 10)",
                         "card.dvwa.desc": "Informe completo de test de intrusión de aplicación sobre DVWA (configuración <span class=\"font-mono\">Low</span>), alineado con el OWASP Top 10 2021. <strong>12 vulnerabilidades identificadas y explotadas</strong> — 4 de ellas críticas, que llevan al compromiso total del servidor — cada una documentada con prueba de concepto, código fuente vulnerable y corrección detallada.",
                         "card.dvwa.f1": "Inyección de comandos del SO y SQLi → RCE y extracción completa de la base de datos",
@@ -1125,11 +1192,18 @@
                         "label.keyfeatures": "الميزات الرئيسية:", "label.strengths": "أبرز النقاط:", "label.attackchain": "سلسلة الهجوم:",
                         "link.source": "الكود المصدري", "link.demo": "عرض توضيحي", "link.report": "قراءة التقرير",
                         "card.shellter.title": "Shellter — تأجير بيئات Linux عند الطلب",
-                        "card.shellter.desc": "منصة ويب لتأجير بيئة Linux مؤقتة يمكن الوصول إليها عبر SSH ببضع نقرات. بنية موزّعة control plane / workers، وبنية تحتية قابلة لإعادة الإنتاج ككود، وخدمة مرنة ذاتية التعافي.",
-                        "card.shellter.f1": "بنية موزّعة control plane / workers (Flask، PostgreSQL، Nginx)",
-                        "card.shellter.f2": "توفير تلقائي لحاويات Linux معزولة (Ubuntu / Debian / Alpine) عبر SSH",
-                        "card.shellter.f3": "Infrastructure as Code: Vagrant + Ansible (Docker، تقوية SSH، أسرار عبر Vault)",
-                        "card.shellter.f4": "Resource Manager، وتجاوز تلقائي للأعطال (self-healing) وخط أنابيب CI/CD",
+                        "card.shellter.desc": "منصة ويب لتأجير بيئات Linux مؤقتة (مشروع جماعي، INSA STI-4A، فريق من 4). يختار المستخدم توزيعة (Ubuntu، Debian، Alpine) ومدة، ثم يحصل على حاوية Docker معزولة يمكن الوصول إليها عبر SSH، مع إمكانية التمديد أو الإيقاف.",
+                        "card.shellter.f1": "مستوى تحكّم (Flask، PostgreSQL، وكيل عكسي nginx عبر HTTPS) / مستوى تنفيذ (أجهزة workers)؛ لا يتواصل Flask مع Docker مباشرة بل عبر Worker Agent",
+                        "card.shellter.f2": "توافر عالٍ: نبضات heartbeat من الـ workers وإعادة إنشاء تلقائية للنُسخ على worker آخر عند حدوث عطل",
+                        "card.shellter.f3": "حصص لكل مستخدم، تمديد، انتهاء تلقائي، تشفير كلمات مرور SSH، ودور مدير",
+                        "card.shellter.f4": "بنية تحتية قابلة لإعادة الإنتاج: 4 أجهزة افتراضية عبر Vagrant + Ansible (تقوية، TLS، DNS، مزامنة الوقت)، وترحيلات موثّقة (Flask-Migrate)",
+                        "card.shellter.f5": "تكامل مستمر عبر GitHub Actions: 55 اختبارًا + فحوص أمنية (Semgrep، gitleaks، Trivy)؛ وفرع Kubernetes كامتداد",
+                        "card.saf.title": "الهيدروجين وSAF لمطار هامبورغ",
+                        "card.saf.desc": "دراسة تقنية-اقتصادية (تحدٍّ ضمن ECIU University، بالتعاون مع <strong>Airbus</strong> وجامعة <strong>هامبورغ</strong>) تقارن نماذج إنتاج الهيدروجين الأخضر لإزالة الكربون من مطار هامبورغ: الإنتاج المحلي (رياح، طاقة شمسية على الأسطح) مقابل الاستيراد من المغرب.",
+                        "card.saf.f1": "الإنتاج المحلي: إمكانات طاقة الرياح والطاقة الشمسية على الأسطح (تحليل جغرافي-مكاني عبر QGIS)",
+                        "card.saf.f2": "سيناريو الاستيراد: هيدروجين أخضر / أزرق / رمادي في المغرب والنقل (NH3، LOHC، LH2، أنابيب)",
+                        "card.saf.f3": "نمذجة التكلفة المُنتظمة للهيدروجين (LCOH) وتوقّع أسعار الطاقة",
+                        "card.saf.f4": "تحليل مقارن للسيناريوهات وتوصيات استراتيجية (قصيرة / متوسطة / طويلة المدى)",
                         "card.dvwa.title": "اختبار اختراق ويب — DVWA (OWASP Top 10)",
                         "card.dvwa.desc": "تقرير كامل لاختبار اختراق تطبيقي على DVWA (إعداد <span class=\"font-mono\">Low</span>)، متوافق مع OWASP Top 10 2021. <strong>تم تحديد واستغلال 12 ثغرة</strong> — منها 4 حرجة تؤدي إلى اختراق كامل للخادم — وكل واحدة موثّقة بإثبات مفهوم وكود مصدري مصاب وتصحيح مفصّل.",
                         "card.dvwa.f1": "حقن أوامر نظام التشغيل و SQLi → تنفيذ أوامر عن بُعد واستخراج كامل لقاعدة البيانات",
